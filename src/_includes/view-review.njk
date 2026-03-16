@@ -1,0 +1,102 @@
+<section class="review-section py-5 text-center">
+  <div class="container">
+    <h3 class="fw-bold mb-1 text-dark">Please leave a review for us on</h3>
+    <h2 class="display-6 fw-bold mb-5">
+      <span class="text-google">Google</span> | <span class="text-facebook">Facebook</span>
+    </h2>
+
+    <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+      <a href="#" class="review-badge google-ring">
+        <div class="inner-content">
+          <p class="mb-1">Review us<br>on</p>
+          <img src="https://www.gesi.org/wp-content/uploads/2024/08/google-logo-png-open-2000.png" alt="Google" width="65">
+        </div>
+      </a>
+
+      <a href="#" class="review-badge facebook-ring">
+        <div class="inner-content">
+          <p class="mb-1">Review us<br>on</p>
+          <img src="https://images.icon-icons.com/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt="Facebook" width="75">
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Section Background */
+  .review-section {
+    background-color: #fdfbe8; /* The exact cream/off-white background from image */
+    font-family: 'Arial', sans-serif;
+  }
+
+  /* Text Colors */
+  .text-google { color: #4285F4; }
+  .text-facebook { color: #1877F2; }
+
+  /* Base Badge Style */
+  .review-badge {
+    text-decoration: none;
+    color: #555;
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px; /* Space for the border */
+    transition: transform 0.3s ease;
+  }
+
+  .review-badge:hover {
+    transform: scale(1.05);
+  }
+
+  .inner-content {
+    background: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    z-index: 2;
+  }
+
+  /* Google Multi-Color Border */
+  .google-ring {
+    background: conic-gradient(
+      #4285F4 0deg 90deg, 
+      #EA4335 90deg 180deg, 
+      #FBBC05 180deg 270deg, 
+      #34A853 270deg 360deg
+    );
+    padding: 6px; /* This defines the border thickness */
+  }
+
+  /* Facebook Solid Blue Border */
+  .facebook-ring {
+    background: #3b5998;
+    padding: 6px; /* This defines the border thickness */
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 576px) {
+    .review-badge {
+      width: 160px;
+      height: 160px;
+    }
+    .inner-content p {
+      font-size: 0.9rem;
+    }
+    .inner-content img {
+      width: 70px;
+    }
+  }
+</style>
