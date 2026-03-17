@@ -14,16 +14,365 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; }
 
-    <nav class="main-nav">
+  /* ── MOBILE TOPBAR — floats over hero image ── */
+  .mobile-topbar {
+    display: none;
+    background: rgba(11, 45, 72, 0.15);     /* same as desktop navbar */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    padding: 0 16px;
+    height: 56px;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;                      /* floats over hero */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* ── HAMBURGER ── */
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+  }
+  .hamburger svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+  }
+
+  /* ── OVERLAY ── */
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 1199;
+  }
+  .overlay.active { display: block; }
+
+  /* ── SLIDE-IN DRAWER ── */
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 300px;
+    height: 100dvh;
+    background: #1b4f82;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    transition: left .3s ease;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .mobile-drawer::-webkit-scrollbar { display: none; }
+  .mobile-drawer.open { left: 0; }
+
+  /* Drawer header */
+  .drawer-header {
+    background: #d93025;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .drawer-logo {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  .close-btn svg {
+    width: 22px;
+    height: 22px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+  }
+
+  /* CTA buttons */
+  .drawer-ctas {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    flex-shrink: 0;
+  }
+  .drawer-ctas a {
+    display: block;
+    text-align: center;
+    padding: 11px;
+    font-size: .82rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 3px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+  }
+  .cta-red   { background: #d93025; color: #fff; }
+  .cta-white { background: #fff;    color: #1b4f82; }
+
+  /* Nav list */
+  .drawer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .drawer-nav > li { border-bottom: 1px solid rgba(255,255,255,.1); }
+
+  /* Top-level button */
+  .drawer-nav > li > .m-nav-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+    padding: 15px 16px;
+    cursor: pointer;
+    text-align: left;
+    transition: background .2s;
+  }
+  .drawer-nav > li > .m-nav-btn:hover { background: rgba(255,255,255,.08); }
+  .drawer-nav > li.open > .m-nav-btn  { background: rgba(255,255,255,.1); }
+
+  /* Chevron */
+  .chevron-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    stroke: rgba(255,255,255,.85);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .25s;
+  }
+  .drawer-nav > li.open > .m-nav-btn .chevron-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Submenu */
+  .m-submenu {
+    display: none;
+    background: #163e67;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .drawer-nav > li.open .m-submenu { display: block; }
+
+  .m-submenu li { border-top: 1px solid rgba(255,255,255,.08); }
+  .m-submenu li a {
+    display: block;
+    color: rgba(255,255,255,.88);
+    font-size: .83rem;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: background .15s;
+  }
+  .m-submenu li a:hover { background: rgba(255,255,255,.08); color: #fff; }
+
+  /* ── SHOW / HIDE ── */
+  @media (max-width: 991px)  { .mobile-topbar { display: flex; } }
+  @media (min-width: 992px)  { .mobile-topbar, .mobile-drawer, .overlay { display: none !important; } }
+</style>
+
+<!-- ① MOBILE TOPBAR -->
+<div class="mobile-topbar">
+  <div></div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <!-- WHITE stroke so it shows on transparent dark bg -->
+    <svg id="hamIcon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
+      <line x1="3" y1="6"  x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+</div>
+
+<!-- ② OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ③ DRAWER -->
+<div class="mobile-drawer" id="drawer">
+
+  <div class="drawer-header">
+    <a class="drawer-logo" href="/">Detroit Roofing & Construction</a>
+    <button class="close-btn" id="closeBtn" aria-label="Close">
+      <svg viewBox="0 0 24 24">
+        <line x1="4" y1="4" x2="20" y2="20"/>
+        <line x1="20" y1="4" x2="4" y2="20"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="drawer-ctas">
+    <a class="cta-red"   href="/contact/">CONTACT US NOW</a>
+    <a class="cta-white" href="/book-a-quote/">BOOK A QUOTE</a>
+  </div>
+
+  <ul class="drawer-nav">
+
+    <li>
+      <button class="m-nav-btn" onclick="window.location='/'">Home</button>
+    </li>
+
+    <li class="has-sub">
+      <button class="m-nav-btn">Residential Roofing
+        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="m-submenu">
+        <li><a href="/residential-roofing/">Residential Roofing Overview</a></li>
+        <li><a href="/solar-shingles/">Solar Shingles</a></li>
+        <li><a href="/residential-roofing/why-gaf-products/">Why GAF Products</a></li>
+        <li><a href="/residential-roofing/why-owens-corning-products/">Why Owens Corning Products</a></li>
+        <li><a href="/residential-roofing/real-warranty/">Real Warranty</a></li>
+        <li><a href="/residential-roofing/free-roof-inspection/">Free Roof Inspection</a></li>
+        <li><a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
+        <li><a href="/residential-roofing/faqs/">Roof FAQs</a></li>
+        <li><a href="/residential-roofing/gallery/">Residential Roof Gallery</a></li>
+      </ul>
+    </li>
+
+    <li class="has-sub">
+      <button class="m-nav-btn">Roof Repair
+        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="m-submenu">
+        <li><a href="/roof-repair/">Roof Repair Overview</a></li>
+        <li><a href="/roof-repair/storm-damage/">Storm Damage Repair</a></li>
+        <li><a href="/roof-repair/hail-damage/">Hail Damage Repair</a></li>
+        <li><a href="/roof-repair/gallery/">Roof Repair Gallery</a></li>
+        <li><a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
+      </ul>
+    </li>
+
+    <li class="has-sub">
+      <button class="m-nav-btn">Siding Replacement
+        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="m-submenu">
+        <li><a href="/siding-replacement-Detroit/">Siding Replacement Overview</a></li>
+        <li><a href="/siding-replacement-Detroit/siding-replacement-process-Detroit/">Siding Replacement Process</a></li>
+        <li><a href="/siding-replacement-Detroit/siding-types-comparison-Detroit/">Siding Types Comparison</a></li>
+        <li><a href="/siding-replacement-Detroit/siding-gallery-Detroit/">Siding Gallery</a></li>
+        <li><a href="/siding-replacement-Detroit/siding-frequently-asked-questions-Detroit/">Siding FAQ</a></li>
+      </ul>
+    </li>
+
+    <li class="has-sub">
+      <button class="m-nav-btn">Commercial Roofing
+        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="m-submenu">
+        <li><a href="/commercial-roofing/">Commercial Roof Overview</a></li>
+        <li><a href="/commercial-roofing-services-Detroit-tx/">Commercial Roofing Services</a></li>
+        <li><a href="/multi-family-roofing-Detroit/">Multi-Family Roofing</a></li>
+        <li><a href="/commercial-roofing/gallery/">Commercial Roof Gallery</a></li>
+      </ul>
+    </li>
+
+    <li class="has-sub">
+      <button class="m-nav-btn">Roof Insurance Claims
+        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="m-submenu">
+        <li><a href="/roof-insurance-claims/">Roof Insurance Claims Overview</a></li>
+        <li><a href="/roof-insurance-claims/storm-damage-experts/">Storm Damage Experts</a></li>
+        <li><a href="/roof-insurance-claims/free-roofs/">"Free Roofs"</a></li>
+      </ul>
+    </li>
+
+    <li class="has-sub">
+      <button class="m-nav-btn">Why Us</button>
+    </li>
+
+    <li class="has-sub">
+      <button class="m-nav-btn">Reviews</button>
+    </li>
+
+  </ul>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const hamIcon   = document.getElementById('hamIcon');
+  const drawer    = document.getElementById('drawer');
+  const overlay   = document.getElementById('overlay');
+  const closeBtn  = document.getElementById('closeBtn');
+
+  const hamOpen  = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  const hamClose = '<line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>';
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    overlay.classList.add('active');
+    hamIcon.innerHTML = hamClose;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('active');
+    hamIcon.innerHTML = hamOpen;
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', function() {
+    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+  });
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  document.querySelectorAll('.drawer-nav li.has-sub > .m-nav-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const li = this.parentElement;
+      const isOpen = li.classList.contains('open');
+      document.querySelectorAll('.drawer-nav li.has-sub').forEach(function(i) { i.classList.remove('open'); });
+      if (!isOpen) li.classList.add('open');
+    });
+  });
+</script>
+    <nav class="main-nav d-none d-md-block">
   <ul>
- 
     <li>
       <button class="nav-btn" onclick="window.location='/'">Home</button>
     </li>
- 
     <li class="has-dd">
-      <button class="nav-btn">Residential Roofing <span class="caret">▾</span></button>
+      <button class="nav-btn">Residential Roofing   <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
       <div class="dd-panel">
         <div class="dd-links">
           <a href="/residential-roofing/">Residential Roofing Overview</a>
@@ -38,13 +387,13 @@
         </div>
         <div class="dd-desc">
           <h5>Residential Roofing</h5>
-          <p>Detroit Roofing invests more in our people, processes, and products. We've built a complete team of knowledgeable, expert project managers who work directly for us – we don't subcontract out your roof project. You'll love the results.</p>
+          <p>Detroit Roofing invests more in our people, processes, and products. We've built a complete team of knowledgeable, expert project managers who work directly for us.</p>
         </div>
       </div>
     </li>
- 
     <li class="has-dd">
-      <button class="nav-btn">Roof Repair <span class="caret">▾</span></button>
+      <button class="nav-btn">Roof Repair   <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
       <div class="dd-panel">
         <div class="dd-links">
           <a href="/roof-repair/">Roof Repair Overview</a>
@@ -55,13 +404,13 @@
         </div>
         <div class="dd-desc">
           <h5>Roof Repair</h5>
-          <p>When your roof needs a repair, it's essential to get an assessment you can trust. Detroit Roofing has built a team of expert project managers who give homeowners thorough, honest assessments of roof damage and how to fix it.</p>
+          <p>When your roof needs a repair, it's essential to get an assessment you can trust. Detroit Roofing has built a team of expert project managers who give homeowners thorough, honest assessments.</p>
         </div>
       </div>
     </li>
- 
     <li class="has-dd">
-      <button class="nav-btn">Siding Replacement <span class="caret">▾</span></button>
+      <button class="nav-btn">Siding Replacement   <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
       <div class="dd-panel">
         <div class="dd-links">
           <a href="/siding-replacement-Detroit/">Siding Replacement Overview</a>
@@ -72,13 +421,13 @@
         </div>
         <div class="dd-desc">
           <h5>Siding Replacement</h5>
-          <p>When your siding needs a replacement, it's essential to get an assessment you can trust. Detroit Roofing has built a team of expert project managers who give homeowners thorough, honest assessments of siding damage and how to fix it.</p>
+          <p>When your siding needs a replacement, it's essential to get an assessment you can trust. Our expert project managers give homeowners thorough, honest assessments.</p>
         </div>
       </div>
     </li>
- 
     <li class="has-dd">
-      <button class="nav-btn">Commercial Roofing <span class="caret">▾</span></button>
+      <button class="nav-btn">Commercial Roofing   <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
       <div class="dd-panel">
         <div class="dd-links">
           <a href="/commercial-roofing/">Commercial Roof Overview</a>
@@ -88,27 +437,19 @@
         </div>
         <div class="dd-desc">
           <h5>Commercial Roofing</h5>
-          <p>We have the most experienced and respected commercial roofing project teams in Detroit. You'll love our proven experience in managing commercial roofing projects of all types, including new construction, repair, and maintenance.</p>
+          <p>We have the most experienced and respected commercial roofing project teams in Detroit, managing projects of all types including new construction, repair, and maintenance.</p>
         </div>
       </div>
     </li>
- 
     <li class="has-dd">
-      <button class="nav-btn">Roof Insurance Claims <span class="caret"><a>▾</a></span></button>
-      
+      <button class="nav-btn">Roof Insurance Claims </button>
     </li>
- 
-    <!-- Why Us -->
     <li class="has-dd">
-      <button class="nav-btn">Why Us <span class="caret"><a>▾</a></span></button>
-      
+      <button class="nav-btn">Why Us</button>
     </li>
- 
     <li class="has-dd">
-      <button class="nav-btn">Reviews <span class="caret"><a>▾</a></span></button>
-     
+      <button class="nav-btn">Reviews </button>
     </li>
- 
   </ul>
 </nav>
 
@@ -120,74 +461,72 @@
   <div class="container-fluid hero-inner">
     <div class="row align-items-center gx-2">
 
-
+      <!-- Left Content -->
       <div class="col-md-8 col-12">
-          <div class="right-side-section me-md-5 me-0 ms-4">
-          <div class="logo" style="background-image: url('/images/logo.jpeg');"></div>
-           
-              <h1 class="display-6 hero-title d-inline-block mb-4">
-                <span class="highlight-pill px-3 py-2">Detroit residential roofing services</span>
-              </h1>
+        <div class="right-side-section me-md-5 me-0 ms-md-4 ms-0 px-3 px-md-0">
 
-              <h3 class="blue-text bg-white ps-3 pe-5 rounded py-2s">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-              </h3>
+          <div class="logo-wrapper">
+            <div class="logo" style="background-image: url('/images/logo.jpeg');"></div>
           </div>
 
-        </div>
+          <h1 class="display-6 hero-title d-inline-block mb-4">
+            <span class="highlight-pill px-3 py-2">Detroit residential roofing services</span>
+          </h1>
 
-      <div class="col-md-4 col-12">
+          <h3 class="blue-text bg-white ps-3 pe-3 pe-md-5 rounded py-2">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard
+          </h3>
+
+        </div>
+      </div>
+
+      <!-- Right Form -->
+      <div class="col-md-4 col-12 mt-4 mt-md-0">
         <div class="form-container">
-        <div class="appointment-card p-4">
-          <h5 class="text-center mb-1">Book Your</h5>
-          <div class="text-center mb-3">
-            <span class="appointment-pill d-inline-block">Appointment Now</span>
+          <div class="appointment-card p-4">
+            <h5 class="text-center mb-1">Book Your</h5>
+            <div class="text-center mb-3">
+              <span class="appointment-pill d-inline-block">Appointment Now</span>
+            </div>
+            <form>
+              <div class="row g-2">
+                <div class="col-6">
+                  <input class="form-control rounded-input" placeholder="First Name *" />
+                </div>
+                <div class="col-6">
+                  <input class="form-control rounded-input" placeholder="Last Name *" />
+                </div>
+              </div>
+              <div class="row g-2 mt-2">
+                <div class="col-6">
+                  <input class="form-control rounded-input" placeholder="Phone Number *" />
+                </div>
+                <div class="col-6">
+                  <input type="email" class="form-control rounded-input" placeholder="Email Address *" />
+                </div>
+              </div>
+              <div class="mt-2">
+                <input class="form-control rounded-input" placeholder="Zip Code *" />
+              </div>
+              <div class="mt-2">
+                <select class="form-select rounded-input">
+                  <option selected>How Did You Hear About Us?</option>
+                </select>
+              </div>
+              <div class="mt-2">
+                <textarea class="form-control rounded-input" rows="4" placeholder="How Can We Help You?"></textarea>
+              </div>
+              <div class="mt-2">
+                <select class="form-select rounded-input">
+                  <option selected>Book An Appointment?</option>
+                </select>
+              </div>
+              <div class="mt-3">
+                <button type="button" class="btn btn-danger w-100 btn-cta">START BOOKING NOW</button>
+              </div>
+            </form>
           </div>
-
-          <form>
-            <div class="row g-2">
-              <div class="col-6">
-                <input class="form-control rounded-input" placeholder="First Name *" />
-              </div>
-              <div class="col-6">
-                <input class="form-control rounded-input" placeholder="Last Name *" />
-              </div>
-            </div>
-
-            <div class="row g-2 mt-2">
-              <div class="col-6">
-                <input class="form-control rounded-input" placeholder="Phone Number *" />
-              </div>
-              <div class="col-6">
-                <input type="email" class="form-control rounded-input" placeholder="Email Address *" />
-              </div>
-            </div>
-
-            <div class="mt-2">
-              <input class="form-control rounded-input" placeholder="Zip Code *" />
-            </div>
-
-            <div class="mt-2">
-              <select class="form-select rounded-input">
-                <option selected>How Did You Hear About Us?</option>
-              </select>
-            </div>
-
-            <div class="mt-2">
-              <textarea class="form-control rounded-input" rows="4" placeholder="How Can We Help You?"></textarea>
-            </div>
-
-            <div class="mt-2">
-              <select class="form-select rounded-input">
-                <option selected>Book An Appointment?</option>
-              </select>
-            </div>
-
-            <div class="mt-3">
-              <button type="button" class="btn btn-danger w-100 btn-cta">START BOOKING NOW</button>
-            </div>
-          </form>
-        </div>
         </div>
       </div>
 
@@ -198,17 +537,10 @@
   <div class="container-fluid p-0">
     <div class="row g-0" style="position: relative;">
 
-      <!-- Absolutely positioned image — always full height of the row -->
-      <div class="col-lg-5" style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        height: 100%;
-        background: url('/images/team.png') no-repeat center center / cover;
-      "></div>
+      <!-- Image column — uses class instead of inline style for mobile control -->
+      <div class="col-lg-5 company-img-col"></div>
 
-      <!-- Content col pushed right with offset -->
+      <!-- Content col -->
       <div class="col-lg-7 offset-lg-5 about-content-bg py-5 px-4 px-lg-5 d-flex align-items-center">
         <div class="about-card py-4">
           <h2 class="section-title mb-4">
@@ -324,51 +656,135 @@ Our Recent Reviews
 </div>
 </div>
 
-
-
 <section class="modern-carousel-section">
+  <div class="mb-5"><h1>Our Latest Projects</h1></div>
 
-<div class="mb-5"><h1 >Our Latest Projects</h1></div>
-  <div class="carousel-wrapper">
-    
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&q=80&w=600" alt="Luxury Shingle Roofing">
-      <div class="card-content">
-        <span class="tag" style="background: #fbbf24; color: #000;">Installation</span>
-        <h3>Architectural Shingles</h3>
-        <p>Premium weather-shield installation with a 30-year warranty for a modern suburban home.</p>
+  <div class="carousel-outer">
+
+    <div class="carousel-wrapper" id="carouselWrapper">
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&q=80&w=600" alt="Luxury Shingle Roofing">
+        <div class="card-content">
+          <span class="tag" style="background: #fbbf24; color: #000;">Installation</span>
+          <h3>Architectural Shingles</h3>
+          <p>Premium weather-shield installation with a 30-year warranty for a modern suburban home.</p>
+        </div>
       </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&q=80&w=600" alt="Modern Metal Roof">
+        <div class="card-content">
+          <span class="tag" style="background: #38bdf8; color: #000;">Modern</span>
+          <h3>Standing Seam Metal</h3>
+          <p>Energy-efficient, sleek charcoal metal roofing designed for maximum durability and heat reflection.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&q=80&w=600" alt="Roof Repair Work">
+        <div class="card-content">
+          <span class="tag" style="background: #f87171; color: #fff;">Restoration</span>
+          <h3>Storm Damage Repair</h3>
+          <p>Emergency structural reinforcement and leak prevention following severe hail impact.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600" alt="Commercial Flat Roof">
+        <div class="card-content">
+          <span class="tag" style="background: #4ade80; color: #000;">Commercial</span>
+          <h3>TPO Flat System</h3>
+          <p>Large-scale industrial TPO membrane installation featuring advanced drainage and insulation.</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&q=80&w=600" alt="Modern Metal Roof">
-      <div class="card-content">
-        <span class="tag" style="background: #38bdf8; color: #000;">Modern</span>
-        <h3>Standing Seam Metal</h3>
-        <p>Energy-efficient, sleek charcoal metal roofing designed for maximum durability and heat reflection.</p>
-      </div>
-    </div>
+    <!-- Arrows INSIDE carousel-outer, overlaid on top of cards -->
+    <button class="carousel-arrow arrow-prev" id="arrowPrev" onclick="slideCarousel(-1)">&#8249;</button>
+    <button class="carousel-arrow arrow-next" id="arrowNext" onclick="slideCarousel(1)">&#8250;</button>
 
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&q=80&w=600" alt="Roof Repair Work">
-      <div class="card-content">
-        <span class="tag" style="background: #f87171; color: #fff;">Restoration</span>
-        <h3>Storm Damage Repair</h3>
-        <p>Emergency structural reinforcement and leak prevention following severe hail impact.</p>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600" alt="Commercial Flat Roof">
-      <div class="card-content">
-        <span class="tag" style="background: #4ade80; color: #000;">Commercial</span>
-        <h3>TPO Flat System</h3>
-        <p>Large-scale industrial TPO membrane installation featuring advanced drainage and insulation.</p>
-      </div>
+    <!-- Dot Indicators -->
+    <div class="carousel-dots" id="carouselDots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+      <span class="dot" onclick="goToSlide(3)"></span>
     </div>
 
   </div>
 </section>
+
+<script>
+  let currentSlide = 0;
+  let autoPlayTimer = null;
+  const wrapper = document.getElementById('carouselWrapper');
+  const dots = document.querySelectorAll('.dot');
+  const cards = wrapper.querySelectorAll('.project-card');
+  const total = cards.length;
+
+  function isMobile() {
+    return window.innerWidth <= 991;
+  }
+
+  function updateDots() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+
+  function goToSlide(index) {
+    if (!isMobile()) return;
+    currentSlide = (index + total) % total;
+    const cardWidth = cards[0].offsetWidth + 16; // 16 = gap
+    wrapper.scrollTo({ left: cardWidth * currentSlide, behavior: 'smooth' });
+    updateDots();
+  }
+
+  function slideCarousel(dir) {
+    goToSlide(currentSlide + dir);
+    resetAutoPlay(); // reset timer when user clicks
+  }
+
+  // Sync dots on manual swipe
+  wrapper.addEventListener('scroll', () => {
+    if (!isMobile()) return;
+    const cardWidth = cards[0].offsetWidth + 16;
+    currentSlide = Math.round(wrapper.scrollLeft / cardWidth);
+    updateDots();
+  });
+
+  // Pause autoplay on touch
+  wrapper.addEventListener('touchstart', () => clearInterval(autoPlayTimer));
+  wrapper.addEventListener('touchend', () => startAutoPlay());
+
+  function startAutoPlay() {
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(() => {
+      if (isMobile()) goToSlide(currentSlide + 1);
+    }, 3000); // every 3 seconds
+  }
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayTimer);
+    startAutoPlay();
+  }
+
+  // Show/hide arrows & dots based on screen size
+  function toggleCarouselControls() {
+    const controls = document.querySelectorAll('.carousel-arrow, .carousel-dots');
+    controls.forEach(el => {
+      el.style.display = isMobile() ? '' : 'none';
+    });
+    if (isMobile()) {
+      startAutoPlay();
+    } else {
+      clearInterval(autoPlayTimer);
+    }
+  }
+
+  toggleCarouselControls();
+  window.addEventListener('resize', toggleCarouselControls);
+</script>
 <section class="review-section py-5 text-center">
   <div class="container">
     <h3 class="fw-bold mb-1 text-dark">Please leave a review for us on</h3>
@@ -558,7 +974,7 @@ Our Recent Reviews
     <div class="container">
       <div class="row align-items-center text-center text-md-start">
         <div class="col-md-8">
-          <p class="mb-0 small">Copyright © 2014- 2026 Detroit | Website developed & hosted by <b>Schrader Web Solutions</b></p>
+          <p class="mb-0 small">Copyright © 2026 Detroit | Website developed & hosted by <b>Schrader Web Solutions</b></p>
         </div>
         <div class="col-md-4 text-md-end mt-2 mt-md-0">
           <p class="mb-0 small">Privacy Policy | Terms Conditions</p>
@@ -573,7 +989,6 @@ Our Recent Reviews
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-<!-- Start of OpenWidget (www.openwidget.com) code -->
-<script src="/js/main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

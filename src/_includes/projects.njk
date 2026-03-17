@@ -1,45 +1,129 @@
-
-
 <section class="modern-carousel-section">
+  <div class="mb-5"><h1>Our Latest Projects</h1></div>
 
-<div class="mb-5"><h1 >Our Latest Projects</h1></div>
-  <div class="carousel-wrapper">
-    
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&q=80&w=600" alt="Luxury Shingle Roofing">
-      <div class="card-content">
-        <span class="tag" style="background: #fbbf24; color: #000;">Installation</span>
-        <h3>Architectural Shingles</h3>
-        <p>Premium weather-shield installation with a 30-year warranty for a modern suburban home.</p>
+  <div class="carousel-outer">
+
+    <div class="carousel-wrapper" id="carouselWrapper">
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&q=80&w=600" alt="Luxury Shingle Roofing">
+        <div class="card-content">
+          <span class="tag" style="background: #fbbf24; color: #000;">Installation</span>
+          <h3>Architectural Shingles</h3>
+          <p>Premium weather-shield installation with a 30-year warranty for a modern suburban home.</p>
+        </div>
       </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&q=80&w=600" alt="Modern Metal Roof">
+        <div class="card-content">
+          <span class="tag" style="background: #38bdf8; color: #000;">Modern</span>
+          <h3>Standing Seam Metal</h3>
+          <p>Energy-efficient, sleek charcoal metal roofing designed for maximum durability and heat reflection.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&q=80&w=600" alt="Roof Repair Work">
+        <div class="card-content">
+          <span class="tag" style="background: #f87171; color: #fff;">Restoration</span>
+          <h3>Storm Damage Repair</h3>
+          <p>Emergency structural reinforcement and leak prevention following severe hail impact.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600" alt="Commercial Flat Roof">
+        <div class="card-content">
+          <span class="tag" style="background: #4ade80; color: #000;">Commercial</span>
+          <h3>TPO Flat System</h3>
+          <p>Large-scale industrial TPO membrane installation featuring advanced drainage and insulation.</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&q=80&w=600" alt="Modern Metal Roof">
-      <div class="card-content">
-        <span class="tag" style="background: #38bdf8; color: #000;">Modern</span>
-        <h3>Standing Seam Metal</h3>
-        <p>Energy-efficient, sleek charcoal metal roofing designed for maximum durability and heat reflection.</p>
-      </div>
-    </div>
+    <!-- Arrows INSIDE carousel-outer, overlaid on top of cards -->
+    <button class="carousel-arrow arrow-prev" id="arrowPrev" onclick="slideCarousel(-1)">&#8249;</button>
+    <button class="carousel-arrow arrow-next" id="arrowNext" onclick="slideCarousel(1)">&#8250;</button>
 
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&q=80&w=600" alt="Roof Repair Work">
-      <div class="card-content">
-        <span class="tag" style="background: #f87171; color: #fff;">Restoration</span>
-        <h3>Storm Damage Repair</h3>
-        <p>Emergency structural reinforcement and leak prevention following severe hail impact.</p>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600" alt="Commercial Flat Roof">
-      <div class="card-content">
-        <span class="tag" style="background: #4ade80; color: #000;">Commercial</span>
-        <h3>TPO Flat System</h3>
-        <p>Large-scale industrial TPO membrane installation featuring advanced drainage and insulation.</p>
-      </div>
+    <!-- Dot Indicators -->
+    <div class="carousel-dots" id="carouselDots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+      <span class="dot" onclick="goToSlide(3)"></span>
     </div>
 
   </div>
 </section>
+
+<script>
+  let currentSlide = 0;
+  let autoPlayTimer = null;
+  const wrapper = document.getElementById('carouselWrapper');
+  const dots = document.querySelectorAll('.dot');
+  const cards = wrapper.querySelectorAll('.project-card');
+  const total = cards.length;
+
+  function isMobile() {
+    return window.innerWidth <= 991;
+  }
+
+  function updateDots() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+
+  function goToSlide(index) {
+    if (!isMobile()) return;
+    currentSlide = (index + total) % total;
+    const cardWidth = cards[0].offsetWidth + 16; // 16 = gap
+    wrapper.scrollTo({ left: cardWidth * currentSlide, behavior: 'smooth' });
+    updateDots();
+  }
+
+  function slideCarousel(dir) {
+    goToSlide(currentSlide + dir);
+    resetAutoPlay(); // reset timer when user clicks
+  }
+
+  // Sync dots on manual swipe
+  wrapper.addEventListener('scroll', () => {
+    if (!isMobile()) return;
+    const cardWidth = cards[0].offsetWidth + 16;
+    currentSlide = Math.round(wrapper.scrollLeft / cardWidth);
+    updateDots();
+  });
+
+  // Pause autoplay on touch
+  wrapper.addEventListener('touchstart', () => clearInterval(autoPlayTimer));
+  wrapper.addEventListener('touchend', () => startAutoPlay());
+
+  function startAutoPlay() {
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(() => {
+      if (isMobile()) goToSlide(currentSlide + 1);
+    }, 3000); // every 3 seconds
+  }
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayTimer);
+    startAutoPlay();
+  }
+
+  // Show/hide arrows & dots based on screen size
+  function toggleCarouselControls() {
+    const controls = document.querySelectorAll('.carousel-arrow, .carousel-dots');
+    controls.forEach(el => {
+      el.style.display = isMobile() ? '' : 'none';
+    });
+    if (isMobile()) {
+      startAutoPlay();
+    } else {
+      clearInterval(autoPlayTimer);
+    }
+  }
+
+  toggleCarouselControls();
+  window.addEventListener('resize', toggleCarouselControls);
+</script>
