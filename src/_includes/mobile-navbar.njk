@@ -1,9 +1,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+
 <!-- ① MOBILE TOPBAR -->
 <div class="mobile-topbar">
-  <div></div>
+
+  <!-- Phone on the LEFT -->
+  <a href="tel:8328107822" class="topbar-phone">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+    (832) 810-7822
+  </a>
+
+  <!-- Hamburger on the RIGHT -->
   <button class="hamburger" id="hamburger" aria-label="Open menu">
-    <!-- WHITE stroke so it shows on transparent dark bg -->
     <svg id="hamIcon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
       <line x1="3" y1="6"  x2="21" y2="6"/>
       <line x1="3" y1="12" x2="21" y2="12"/>
@@ -28,92 +37,23 @@
     </button>
   </div>
 
-  <div class="drawer-ctas">
-    <a class="cta-red"   href="/contact/">CONTACT US NOW</a>
-    <a class="cta-white" href="/book-a-quote/">BOOK A QUOTE</a>
+  <ul class="drawer-nav">
+    <li><button class="m-nav-btn" onclick="window.location='/residential-roofing/'">Residential Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roof-repair/'">Roof Repair</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/commercial-roofing/'">Commercial Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/about/'">About Us</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/contact/'">Contact Us</button></li>
+  </ul>
+
+  <div class="drawer-phone">
+    <a href="tel:8328107822" class="drawer-phone-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      (832) 810-7822
+    </a>
   </div>
 
-  <ul class="drawer-nav">
-
-    <li>
-      <button class="m-nav-btn" onclick="window.location='/'">Home</button>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Residential Roofing
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/residential-roofing/">Residential Roofing Overview</a></li>
-        <li><a href="/solar-shingles/">Solar Shingles</a></li>
-        <li><a href="/residential-roofing/why-gaf-products/">Why GAF Products</a></li>
-        <li><a href="/residential-roofing/why-owens-corning-products/">Why Owens Corning Products</a></li>
-        <li><a href="/residential-roofing/real-warranty/">Real Warranty</a></li>
-        <li><a href="/residential-roofing/free-roof-inspection/">Free Roof Inspection</a></li>
-        <li><a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
-        <li><a href="/residential-roofing/faqs/">Roof FAQs</a></li>
-        <li><a href="/residential-roofing/gallery/">Residential Roof Gallery</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Roof Repair
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/roof-repair/">Roof Repair Overview</a></li>
-        <li><a href="/roof-repair/storm-damage/">Storm Damage Repair</a></li>
-        <li><a href="/roof-repair/hail-damage/">Hail Damage Repair</a></li>
-        <li><a href="/roof-repair/gallery/">Roof Repair Gallery</a></li>
-        <li><a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Siding Replacement
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/siding-replacement-Detroit/">Siding Replacement Overview</a></li>
-        <li><a href="/siding-replacement-Detroit/siding-replacement-process-Detroit/">Siding Replacement Process</a></li>
-        <li><a href="/siding-replacement-Detroit/siding-types-comparison-Detroit/">Siding Types Comparison</a></li>
-        <li><a href="/siding-replacement-Detroit/siding-gallery-Detroit/">Siding Gallery</a></li>
-        <li><a href="/siding-replacement-Detroit/siding-frequently-asked-questions-Detroit/">Siding FAQ</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Commercial Roofing
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/commercial-roofing/">Commercial Roof Overview</a></li>
-        <li><a href="/commercial-roofing-services-Detroit-tx/">Commercial Roofing Services</a></li>
-        <li><a href="/multi-family-roofing-Detroit/">Multi-Family Roofing</a></li>
-        <li><a href="/commercial-roofing/gallery/">Commercial Roof Gallery</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Roof Insurance Claims
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/roof-insurance-claims/">Roof Insurance Claims Overview</a></li>
-        <li><a href="/roof-insurance-claims/storm-damage-experts/">Storm Damage Experts</a></li>
-        <li><a href="/roof-insurance-claims/free-roofs/">"Free Roofs"</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Why Us</button>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Reviews</button>
-    </li>
-
-  </ul>
 </div>
 
 <script>
@@ -139,19 +79,7 @@
     document.body.style.overflow = '';
   }
 
-  hamburger.addEventListener('click', function() {
-    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
-  });
+  hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
   closeBtn.addEventListener('click', closeDrawer);
   overlay.addEventListener('click', closeDrawer);
-
-  document.querySelectorAll('.drawer-nav li.has-sub > .m-nav-btn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const li = this.parentElement;
-      const isOpen = li.classList.contains('open');
-      document.querySelectorAll('.drawer-nav li.has-sub').forEach(function(i) { i.classList.remove('open'); });
-      if (!isOpen) li.classList.add('open');
-    });
-  });
 </script>

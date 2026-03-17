@@ -9,14 +9,14 @@
       <a href="#" class="review-badge google-ring">
         <div class="inner-content">
           <p class="mb-1">Review us<br>on</p>
-          <img src="https://www.gesi.org/wp-content/uploads/2024/08/google-logo-png-open-2000.png" alt="Google" width="65">
+          <img src="https://www.gesi.org/wp-content/uploads/2024/08/google-logo-png-open-2000.png" alt="Google" width="50">
         </div>
       </a>
 
       <a href="#" class="review-badge facebook-ring">
         <div class="inner-content">
           <p class="mb-1">Review us<br>on</p>
-          <img src="https://images.icon-icons.com/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt="Facebook" width="75">
+          <img src="https://images.icon-icons.com/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt="Facebook" width="55">
         </div>
       </a>
     </div>
@@ -24,35 +24,30 @@
 </section>
 
 <style>
-  /* Section Background */
   .review-section {
-    background-color: #fdfbe8; /* The exact cream/off-white background from image */
+    background-color: #fdfbe8;
     font-family: 'Arial', sans-serif;
   }
 
-  /* Text Colors */
-  .text-google { color: #4285F4; }
+  .text-google   { color: #4285F4; }
   .text-facebook { color: #1877F2; }
 
-  /* Base Badge Style */
   .review-badge {
     text-decoration: none;
     color: #555;
-    width: 200px;
-    height: 200px;
+    width: 140px;        /* reduced from 200px */
+    height: 140px;
     background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 10px; /* Space for the border */
+    padding: 5px;
     transition: transform 0.3s ease;
   }
 
-  .review-badge:hover {
-    transform: scale(1.05);
-  }
+  .review-badge:hover { transform: scale(1.05); }
 
   .inner-content {
     background: white;
@@ -64,39 +59,43 @@
     align-items: center;
     justify-content: center;
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 0.85rem;   /* reduced from 1.1rem */
     line-height: 1.2;
     z-index: 2;
   }
 
-  /* Google Multi-Color Border */
   .google-ring {
     background: conic-gradient(
-      #4285F4 0deg 90deg, 
-      #EA4335 90deg 180deg, 
-      #FBBC05 180deg 270deg, 
+      #4285F4 0deg 90deg,
+      #EA4335 90deg 180deg,
+      #FBBC05 180deg 270deg,
       #34A853 270deg 360deg
     );
-    padding: 6px; /* This defines the border thickness */
+    padding: 5px;
   }
 
-  /* Facebook Solid Blue Border */
   .facebook-ring {
     background: #3b5998;
-    padding: 6px; /* This defines the border thickness */
+    padding: 5px;
   }
 
-  /* Responsive Adjustments */
+  /* Tablet */
+  @media (max-width: 768px) {
+    .review-badge {
+      width: 120px;
+      height: 120px;
+    }
+    .inner-content { font-size: 0.78rem; }
+    .inner-content img { width: 42px !important; }
+  }
+
+  /* Mobile */
   @media (max-width: 576px) {
     .review-badge {
-      width: 160px;
-      height: 160px;
+      width: 100px;
+      height: 100px;
     }
-    .inner-content p {
-      font-size: 0.9rem;
-    }
-    .inner-content img {
-      width: 70px;
-    }
+    .inner-content { font-size: 0.72rem; }
+    .inner-content img { width: 34px !important; }
   }
 </style>

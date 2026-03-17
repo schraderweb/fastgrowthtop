@@ -16,11 +16,20 @@
   <body>
     
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+
 <!-- ① MOBILE TOPBAR -->
 <div class="mobile-topbar">
-  <div></div>
+
+  <!-- Phone on the LEFT -->
+  <a href="tel:8328107822" class="topbar-phone">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+    (832) 810-7822
+  </a>
+
+  <!-- Hamburger on the RIGHT -->
   <button class="hamburger" id="hamburger" aria-label="Open menu">
-    <!-- WHITE stroke so it shows on transparent dark bg -->
     <svg id="hamIcon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
       <line x1="3" y1="6"  x2="21" y2="6"/>
       <line x1="3" y1="12" x2="21" y2="12"/>
@@ -45,92 +54,23 @@
     </button>
   </div>
 
-  <div class="drawer-ctas">
-    <a class="cta-red"   href="/contact/">CONTACT US NOW</a>
-    <a class="cta-white" href="/book-a-quote/">BOOK A QUOTE</a>
+  <ul class="drawer-nav">
+    <li><button class="m-nav-btn" onclick="window.location='/residential-roofing/'">Residential Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roof-repair/'">Roof Repair</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/commercial-roofing/'">Commercial Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/about/'">About Us</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/contact/'">Contact Us</button></li>
+  </ul>
+
+  <div class="drawer-phone">
+    <a href="tel:8328107822" class="drawer-phone-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      (832) 810-7822
+    </a>
   </div>
 
-  <ul class="drawer-nav">
-
-    <li>
-      <button class="m-nav-btn" onclick="window.location='/'">Home</button>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Residential Roofing
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/residential-roofing/">Residential Roofing Overview</a></li>
-        <li><a href="/solar-shingles/">Solar Shingles</a></li>
-        <li><a href="/residential-roofing/why-gaf-products/">Why GAF Products</a></li>
-        <li><a href="/residential-roofing/why-owens-corning-products/">Why Owens Corning Products</a></li>
-        <li><a href="/residential-roofing/real-warranty/">Real Warranty</a></li>
-        <li><a href="/residential-roofing/free-roof-inspection/">Free Roof Inspection</a></li>
-        <li><a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
-        <li><a href="/residential-roofing/faqs/">Roof FAQs</a></li>
-        <li><a href="/residential-roofing/gallery/">Residential Roof Gallery</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Roof Repair
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/roof-repair/">Roof Repair Overview</a></li>
-        <li><a href="/roof-repair/storm-damage/">Storm Damage Repair</a></li>
-        <li><a href="/roof-repair/hail-damage/">Hail Damage Repair</a></li>
-        <li><a href="/roof-repair/gallery/">Roof Repair Gallery</a></li>
-        <li><a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Siding Replacement
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/siding-replacement-Detroit/">Siding Replacement Overview</a></li>
-        <li><a href="/siding-replacement-Detroit/siding-replacement-process-Detroit/">Siding Replacement Process</a></li>
-        <li><a href="/siding-replacement-Detroit/siding-types-comparison-Detroit/">Siding Types Comparison</a></li>
-        <li><a href="/siding-replacement-Detroit/siding-gallery-Detroit/">Siding Gallery</a></li>
-        <li><a href="/siding-replacement-Detroit/siding-frequently-asked-questions-Detroit/">Siding FAQ</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Commercial Roofing
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/commercial-roofing/">Commercial Roof Overview</a></li>
-        <li><a href="/commercial-roofing-services-Detroit-tx/">Commercial Roofing Services</a></li>
-        <li><a href="/multi-family-roofing-Detroit/">Multi-Family Roofing</a></li>
-        <li><a href="/commercial-roofing/gallery/">Commercial Roof Gallery</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Roof Insurance Claims
-        <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="m-submenu">
-        <li><a href="/roof-insurance-claims/">Roof Insurance Claims Overview</a></li>
-        <li><a href="/roof-insurance-claims/storm-damage-experts/">Storm Damage Experts</a></li>
-        <li><a href="/roof-insurance-claims/free-roofs/">"Free Roofs"</a></li>
-      </ul>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Why Us</button>
-    </li>
-
-    <li class="has-sub">
-      <button class="m-nav-btn">Reviews</button>
-    </li>
-
-  </ul>
 </div>
 
 <script>
@@ -156,106 +96,31 @@
     document.body.style.overflow = '';
   }
 
-  hamburger.addEventListener('click', function() {
-    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
-  });
+  hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
   closeBtn.addEventListener('click', closeDrawer);
   overlay.addEventListener('click', closeDrawer);
-
-  document.querySelectorAll('.drawer-nav li.has-sub > .m-nav-btn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const li = this.parentElement;
-      const isOpen = li.classList.contains('open');
-      document.querySelectorAll('.drawer-nav li.has-sub').forEach(function(i) { i.classList.remove('open'); });
-      if (!isOpen) li.classList.add('open');
-    });
-  });
 </script>
-    <nav class="main-nav d-none d-md-block">
+    <nav class="main-nav">
   <ul>
-    <li>
-      <button class="nav-btn" onclick="window.location='/'">Home</button>
+    <li class="nav-spacer" aria-hidden="true"></li>
+
+    <!-- Centered links group -->
+    <li class="nav-links-group">
+      <button class="nav-btn" onclick="window.location='/residential-roofing/'">Residential Roofing</button>
+      <button class="nav-btn" onclick="window.location='/roof-repair/'">Roof Repair</button>
+      <button class="nav-btn" onclick="window.location='/commercial-roofing/'">Commercial Roofing</button>
+      <button class="nav-btn" onclick="window.location='/about/'">About Us</button>
+      <button class="nav-btn" onclick="window.location='/contact/'">Contact Us</button>
     </li>
-    <li class="has-dd">
-      <button class="nav-btn">Residential Roofing   <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dd-panel">
-        <div class="dd-links">
-          <a href="/residential-roofing/">Residential Roofing Overview</a>
-          <a href="/solar-shingles/">Solar Shingles</a>
-          <a href="/residential-roofing/why-gaf-products/">Why GAF Products</a>
-          <a href="/residential-roofing/why-owens-corning-products/">Why Owens Corning Products</a>
-          <a href="/residential-roofing/real-warranty/">Real Warranty</a>
-          <a href="/residential-roofing/free-roof-inspection/">Free Roof Inspection</a>
-          <a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a>
-          <a href="/residential-roofing/faqs/">Roof FAQs</a>
-          <a href="/residential-roofing/gallery/">Residential Roof Gallery</a>
-        </div>
-        <div class="dd-desc">
-          <h5>Residential Roofing</h5>
-          <p>Detroit Roofing invests more in our people, processes, and products. We've built a complete team of knowledgeable, expert project managers who work directly for us.</p>
-        </div>
-      </div>
-    </li>
-    <li class="has-dd">
-      <button class="nav-btn">Roof Repair   <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dd-panel">
-        <div class="dd-links">
-          <a href="/roof-repair/">Roof Repair Overview</a>
-          <a href="/roof-repair/storm-damage/">Storm Damage Repair</a>
-          <a href="/roof-repair/hail-damage/">Hail Damage Repair</a>
-          <a href="/roof-repair/gallery/">Roof Repair Gallery</a>
-          <a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a>
-        </div>
-        <div class="dd-desc">
-          <h5>Roof Repair</h5>
-          <p>When your roof needs a repair, it's essential to get an assessment you can trust. Detroit Roofing has built a team of expert project managers who give homeowners thorough, honest assessments.</p>
-        </div>
-      </div>
-    </li>
-    <li class="has-dd">
-      <button class="nav-btn">Siding Replacement   <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dd-panel">
-        <div class="dd-links">
-          <a href="/siding-replacement-Detroit/">Siding Replacement Overview</a>
-          <a href="/siding-replacement-Detroit/siding-replacement-process-Detroit/">Siding Replacement Process</a>
-          <a href="/siding-replacement-Detroit/siding-types-comparison-Detroit/">Siding Types Comparison</a>
-          <a href="/siding-replacement-Detroit/siding-gallery-Detroit/">Siding Gallery</a>
-          <a href="/siding-replacement-Detroit/siding-frequently-asked-questions-Detroit/">Siding FAQ</a>
-        </div>
-        <div class="dd-desc">
-          <h5>Siding Replacement</h5>
-          <p>When your siding needs a replacement, it's essential to get an assessment you can trust. Our expert project managers give homeowners thorough, honest assessments.</p>
-        </div>
-      </div>
-    </li>
-    <li class="has-dd">
-      <button class="nav-btn">Commercial Roofing   <svg class="chevron-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dd-panel">
-        <div class="dd-links">
-          <a href="/commercial-roofing/">Commercial Roof Overview</a>
-          <a href="/commercial-roofing-services-Detroit-tx/">Commercial Roofing Services</a>
-          <a href="/multi-family-roofing-Detroit/">Multi-Family Roofing</a>
-          <a href="/commercial-roofing/gallery/">Commercial Roof Gallery</a>
-        </div>
-        <div class="dd-desc">
-          <h5>Commercial Roofing</h5>
-          <p>We have the most experienced and respected commercial roofing project teams in Detroit, managing projects of all types including new construction, repair, and maintenance.</p>
-        </div>
-      </div>
-    </li>
-    <li class="has-dd">
-      <button class="nav-btn">Roof Insurance Claims </button>
-    </li>
-    <li class="has-dd">
-      <button class="nav-btn">Why Us</button>
-    </li>
-    <li class="has-dd">
-      <button class="nav-btn">Reviews </button>
+
+    <!-- Phone — right side -->
+    <li class="nav-phone">
+      <a href="tel:8328107822" class="nav-phone-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        (832) 810-7822
+      </a>
     </li>
   </ul>
 </nav>
@@ -264,7 +129,6 @@
       
 <section class="hero-section">
   <div class="hero-bg"></div>
-
   <div class="container-fluid hero-inner">
     <div class="row align-items-center gx-2">
 
@@ -276,19 +140,21 @@
             <div class="logo" style="background-image: url('/images/logo.jpeg');"></div>
           </div>
 
-          <h1 class="display-6 hero-title d-inline-block mb-4">
-            <span class="highlight-pill px-3 py-2">Detroit residential roofing services</span>
-          </h1>
+<h1 class="hero-title mb-3">
+  <span class="hero-title-text">
+    Detroit <span>Residential</span> Roofing Services
+  </span>
+</h1>
 
-          <h3 class="blue-text bg-white ps-3 pe-3 pe-md-5 rounded py-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard
-          </h3>
+<h3 class="hero-subtitle">
+  Lorem Ipsum is simply dummy text of the printing and
+  typesetting industry. Lorem Ipsum has been the industry's standard.
+</h3>
 
         </div>
       </div>
 
-      <!-- Right Form -->
+      <!-- Right Form (unchanged) -->
       <div class="col-md-4 col-12 mt-4 mt-md-0">
         <div class="form-container">
           <div class="appointment-card p-4">
@@ -403,68 +269,191 @@
   </div>
 </section>
 
-<div class="text-center py-5 review-sec"><h1 class="text-white">
-Our Recent Reviews
-</h1>
-<div class="review-container">
+<div class="review-sec text-center py-5">
+  <h1 class="text-white mb-2">Our Recent Reviews</h1>
+  <p class="review-sec-sub">What our Detroit customers are saying</p>
 
+  <div class="review-carousel-outer">
 
-  <div class="review-card">
-    <div class="review-header">
-      <div class="avatar" style="background-color: #ea4335;">S</div>
-      <div class="user-info">
-        <span class="user-name">Sarah J.</span>
-        <span class="review-date">2 weeks ago</span>
+    <!-- Arrows -->
+    <button class="review-arrow review-prev" id="reviewPrev">&#8249;</button>
+    <button class="review-arrow review-next" id="reviewNext">&#8250;</button>
+
+    <!-- Track -->
+    <div class="review-track" id="reviewTrack">
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#ea4335;">S</div>
+          <div class="user-info">
+            <span class="user-name">Sarah J.</span>
+            <span class="review-date">2 weeks ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">After the last hail storm, I was stressed about leaks. These guys came out the same day for an inspection and had the shingles replaced by the weekend. Fast and professional!</p>
       </div>
-      <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
-    </div>
-    <div class="stars">★★★★★</div>
-    <p class="review-text">After the last hail storm, I was stressed about leaks. These guys came out the same day for an inspection and had the shingles replaced by the weekend. Fast and professional!</p>
-  </div>
 
-  <div class="review-card">
-    <div class="review-header">
-      <div class="avatar" style="background-color: #34a853;">M</div>
-      <div class="user-info">
-        <span class="user-name">Mark Thompson</span>
-        <span class="review-date">1 month ago</span>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#34a853;">M</div>
+          <div class="user-info">
+            <span class="user-name">Mark Thompson</span>
+            <span class="review-date">1 month ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Best roofing crew in the area. They didn't leave a single nail on my driveway. The new metal roof looks incredible and the team was respectful of our property throughout.</p>
       </div>
-      <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
-    </div>
-    <div class="stars">★★★★★</div>
-    <p class="review-text">Best roofing crew in the area. They didn't leave a single nail on my driveway (which I was worried about). The new metal roof looks incredible.</p>
-  </div>
 
-  <div class="review-card">
-    <div class="review-header">
-      <div class="avatar" style="background-color: #4285f4;">E</div>
-      <div class="user-info">
-        <span class="user-name">Elena Rodriguez</span>
-        <span class="review-date">3 weeks ago</span>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#4285f4;">E</div>
+          <div class="user-info">
+            <span class="user-name">Elena Rodriguez</span>
+            <span class="review-date">3 weeks ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Very transparent pricing. No hidden fees or surprises halfway through the job. It's rare to find a contractor this honest these days. Will definitely use again.</p>
       </div>
-      <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
-    </div>
-    <div class="stars">★★★★★</div>
-    <p class="review-text">Very transparent pricing. No hidden fees or 'surprises' halfway through the job. It’s rare to find a contractor this honest these days.</p>
-  </div>
 
-  <div class="review-card">
-    <div class="review-header">
-      <div class="avatar" style="background-color: #fbbc05;">D</div>
-      <div class="user-info">
-        <span class="user-name">David L.</span>
-        <span class="review-date">2 months ago</span>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#fbbc05;">D</div>
+          <div class="user-info">
+            <span class="user-name">David L.</span>
+            <span class="review-date">2 months ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text"><b>Local Guide</b> · Had a minor leak near the chimney. They fixed it quickly and even checked the rest of the roof for free. Highly recommend to all Detroit homeowners.</p>
       </div>
-      <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
-    </div>
-    <div class="stars">★★★★★</div>
-    <p class="review-text"><b>Local Guide</b> • Had a minor leak near the chimney. They fixed it quickly and even checked the rest of the roof for free. Highly recommend.</p>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#7c3aed;">R</div>
+          <div class="user-info">
+            <span class="user-name">Rachel Kim</span>
+            <span class="review-date">3 months ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">From the first call to the final cleanup, everything was seamless. The crew was on time every day and the new roof looks stunning. My neighbors keep asking who did it!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#0891b2;">J</div>
+          <div class="user-info">
+            <span class="user-name">James Patterson</span>
+            <span class="review-date">6 weeks ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Got three quotes and Detroit Roofing was not only the most competitive but also the most thorough in their inspection. Three months later, zero issues. Outstanding work.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#059669;">T</div>
+          <div class="user-info">
+            <span class="user-name">Teresa Nguyen</span>
+            <span class="review-date">1 week ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">I called on a Tuesday about an emergency leak and they were at my house by Wednesday morning. Leak fixed same day. The follow-up call to check in was a really nice touch.</p>
+      </div>
+
+    </div><!-- end track -->
+
+    <!-- Dots -->
+    <div class="review-dots" id="reviewDots"></div>
+
   </div>
 </div>
-</div>
+
+<script>
+(function() {
+  const track    = document.getElementById('reviewTrack');
+  const dotsWrap = document.getElementById('reviewDots');
+  const prevBtn  = document.getElementById('reviewPrev');
+  const nextBtn  = document.getElementById('reviewNext');
+  const cards    = track.querySelectorAll('.review-card');
+
+  let current = 0;
+  let autoTimer = null;
+  let visibleCount = getVisible();
+
+  function getVisible() {
+    return window.innerWidth < 576 ? 1 : window.innerWidth < 992 ? 2 : 3;
+  }
+
+  const total = cards.length;
+
+  /* Build dots */
+  function buildDots() {
+    visibleCount = getVisible();
+    dotsWrap.innerHTML = '';
+    const pages = total - visibleCount + 1;
+    for (let i = 0; i < pages; i++) {
+      const d = document.createElement('span');
+      d.className = 'review-dot' + (i === current ? ' active' : '');
+      d.addEventListener('click', () => { goTo(i); resetAuto(); });
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(index) {
+    visibleCount = getVisible();
+    const pages = total - visibleCount + 1;
+    current = Math.max(0, Math.min(index, pages - 1));
+    const cardW = cards[0].offsetWidth + 20;
+    track.scrollTo({ left: cardW * current, behavior: 'smooth' });
+    dotsWrap.querySelectorAll('.review-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function next() { goTo(current + 1 < total - visibleCount + 1 ? current + 1 : 0); }
+  function prev() { goTo(current > 0 ? current - 1 : total - visibleCount); }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(next, 3500);
+  }
+
+  function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+  prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
+  nextBtn.addEventListener('click', () => { next(); resetAuto(); });
+
+  /* Sync dot on manual swipe */
+  track.addEventListener('scroll', () => {
+    const cardW = cards[0].offsetWidth + 20;
+    current = Math.round(track.scrollLeft / cardW);
+    dotsWrap.querySelectorAll('.review-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  });
+
+  /* Pause on touch */
+  track.addEventListener('touchstart', () => clearInterval(autoTimer));
+  track.addEventListener('touchend', startAuto);
+
+  window.addEventListener('resize', () => { buildDots(); goTo(0); });
+
+  buildDots();
+  startAuto();
+})();
+</script>
 
 <section class="modern-carousel-section">
-  <div class="mb-5"><h1>Our Latest Projects</h1></div>
+  <div class="mb-2"><h1>Our Latest Projects</h1></div>
 
   <div class="carousel-outer">
 
@@ -603,14 +592,14 @@ Our Recent Reviews
       <a href="#" class="review-badge google-ring">
         <div class="inner-content">
           <p class="mb-1">Review us<br>on</p>
-          <img src="https://www.gesi.org/wp-content/uploads/2024/08/google-logo-png-open-2000.png" alt="Google" width="65">
+          <img src="https://www.gesi.org/wp-content/uploads/2024/08/google-logo-png-open-2000.png" alt="Google" width="50">
         </div>
       </a>
 
       <a href="#" class="review-badge facebook-ring">
         <div class="inner-content">
           <p class="mb-1">Review us<br>on</p>
-          <img src="https://images.icon-icons.com/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt="Facebook" width="75">
+          <img src="https://images.icon-icons.com/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt="Facebook" width="55">
         </div>
       </a>
     </div>
@@ -618,35 +607,30 @@ Our Recent Reviews
 </section>
 
 <style>
-  /* Section Background */
   .review-section {
-    background-color: #fdfbe8; /* The exact cream/off-white background from image */
+    background-color: #fdfbe8;
     font-family: 'Arial', sans-serif;
   }
 
-  /* Text Colors */
-  .text-google { color: #4285F4; }
+  .text-google   { color: #4285F4; }
   .text-facebook { color: #1877F2; }
 
-  /* Base Badge Style */
   .review-badge {
     text-decoration: none;
     color: #555;
-    width: 200px;
-    height: 200px;
+    width: 140px;        /* reduced from 200px */
+    height: 140px;
     background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 10px; /* Space for the border */
+    padding: 5px;
     transition: transform 0.3s ease;
   }
 
-  .review-badge:hover {
-    transform: scale(1.05);
-  }
+  .review-badge:hover { transform: scale(1.05); }
 
   .inner-content {
     background: white;
@@ -658,40 +642,44 @@ Our Recent Reviews
     align-items: center;
     justify-content: center;
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 0.85rem;   /* reduced from 1.1rem */
     line-height: 1.2;
     z-index: 2;
   }
 
-  /* Google Multi-Color Border */
   .google-ring {
     background: conic-gradient(
-      #4285F4 0deg 90deg, 
-      #EA4335 90deg 180deg, 
-      #FBBC05 180deg 270deg, 
+      #4285F4 0deg 90deg,
+      #EA4335 90deg 180deg,
+      #FBBC05 180deg 270deg,
       #34A853 270deg 360deg
     );
-    padding: 6px; /* This defines the border thickness */
+    padding: 5px;
   }
 
-  /* Facebook Solid Blue Border */
   .facebook-ring {
     background: #3b5998;
-    padding: 6px; /* This defines the border thickness */
+    padding: 5px;
   }
 
-  /* Responsive Adjustments */
+  /* Tablet */
+  @media (max-width: 768px) {
+    .review-badge {
+      width: 120px;
+      height: 120px;
+    }
+    .inner-content { font-size: 0.78rem; }
+    .inner-content img { width: 42px !important; }
+  }
+
+  /* Mobile */
   @media (max-width: 576px) {
     .review-badge {
-      width: 160px;
-      height: 160px;
+      width: 100px;
+      height: 100px;
     }
-    .inner-content p {
-      font-size: 0.9rem;
-    }
-    .inner-content img {
-      width: 70px;
-    }
+    .inner-content { font-size: 0.72rem; }
+    .inner-content img { width: 34px !important; }
   }
 </style>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d157500.5136689516!2d-83.09911505000001!3d42.352595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824ca0110cb1d75%3A0x5776864e35b9c4d2!2sDetroit%2C%20MI%2C%20USA!5e1!3m2!1sen!2s!4v1773570318015!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -699,65 +687,68 @@ Our Recent Reviews
 <footer class="footer-main text-white pt-5">
   <div class="container pb-4">
     <div class="row gy-5">
-      
+
+      <!-- Logo & Social -->
       <div class="col-lg-3">
         <div class="mb-4">
-           <img src="/images/logo.jpeg" alt="Logo" class="img-fluid me-2" style="max-height: 150px;">
-            
+          <img src="/images/logo.jpeg" alt="Detroit Roofing Logo" class="img-fluid" style="max-height: 150px;">
         </div>
         <p class="small lh-base opacity-75">
-          We always deliver 100% customer satisfaction and absolute quality work without any other compromis, just like we've been doing since 1982.
+          We always deliver 100% customer satisfaction and absolute quality work without compromise, just like we've been doing since 1982.
         </p>
-        
         <div class="mt-4">
           <h5 class="footer-heading">Follow Us</h5>
-          <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center">
-            <i class="fab fa-facebook-f"></i> f
-          </a>
-          <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center">
-            <i class="fab fa-instagram"></i> I
-          </a>
-          <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center">
-            <i class="fab fa-instagram"></i> X
-          </a>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center">f</a>
+            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center">in</a>
+            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center">X</a>
+          </div>
         </div>
       </div>
 
+      <!-- Quick Links — matches navbar -->
       <div class="col-lg-5 px-lg-5">
         <h5 class="footer-heading">Quick Links</h5>
         <div class="row mt-4">
           <div class="col-6">
             <ul class="list-unstyled footer-list">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Service Area</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Specials</a></li>
-              <li><a href="#">House Washing</a></li>
-              <li><a href="#">Commercial Cleaning</a></li>
-              <li><a href="#">Roof Cleaning</a></li>
-              <li><a href="#">Gutter Cleaning</a></li>
+              <li><a href="/residential-roofing/">Residential Roofing</a></li>
+              <li><a href="/roof-repair/">Roof Repair</a></li>
+              <li><a href="/commercial-roofing/">Commercial Roofing</a></li>
+              <li><a href="/about/">About Us</a></li>
+              <li><a href="/contact/">Contact Us</a></li>
             </ul>
           </div>
           <div class="col-6">
             <ul class="list-unstyled footer-list">
-              <li><a href="#">Driveway Cleaning</a></li>
-              <li><a href="#">Paver Cleaning</a></li>
-              <li><a href="#">Sidewalk Cleaning</a></li>
-              <li><a href="#">Fence Cleaning</a></li>
-              <li><a href="#">Window Cleaning</a></li>
-              <li><a href="#">Dryer Vent Cleaning</a></li>
+              <li><a href="/residential-roofing/free-roof-inspection/">Free Roof Inspection</a></li>
+              <li><a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
+              <li><a href="/roof-repair/storm-damage/">Storm Damage Repair</a></li>
+              <li><a href="/roof-repair/hail-damage/">Hail Damage Repair</a></li>
+              <li><a href="/residential-roofing/gallery/">Gallery</a></li>
             </ul>
           </div>
         </div>
+
+        <!-- Phone CTA -->
+        <a href="tel:8328107822" class="footer-phone-cta mt-4 d-inline-flex align-items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          (832) 810-7822
+        </a>
       </div>
 
+      <!-- Company Info & Hours -->
       <div class="col-lg-4">
         <div class="mb-5">
           <h5 class="footer-heading">Company Info</h5>
-          <p class="small mt-4">
-            428 South Garfield Avenue Traverse City, MI <br> 49686
+          <p class="small mt-4 opacity-75">
+            428 South Garfield Avenue<br>
+            Traverse City, MI 49686
+          </p>
+          <p class="small opacity-75">
+            <a href="mailto:info@detroitroofing.com" style="color: var(--color-text-light);">info@detroitroofing.com</a>
           </p>
         </div>
         <div>
@@ -767,9 +758,9 @@ Our Recent Reviews
             <li><span>Tue:</span> <span>9:00 AM – 9:00 PM</span></li>
             <li><span>Wed:</span> <span>9:00 AM – 9:00 PM</span></li>
             <li><span>Thu:</span> <span>9:00 AM – 9:00 PM</span></li>
-            <li><span>Fri:</span> <span>9:00 AM – 9:00 PM</span></li>
-            <li><span>Sat:</span> <span>9:00 AM – 9:00 PM</span></li>
-            <li><span>Sun:</span> <span>9:00 AM – 9:00 PM</span></li>
+                       
+            <li><span>Sat:</span>       <span>9:00 AM – 9:00 PM</span></li>
+            <li><span>Sun:</span>       <span>9:00 AM – 9:00 PM</span></li>
           </ul>
         </div>
       </div>
@@ -781,16 +772,15 @@ Our Recent Reviews
     <div class="container">
       <div class="row align-items-center text-center text-md-start">
         <div class="col-md-8">
-          <p class="mb-0 small">Copyright © 2026 Detroit | Website developed & hosted by <b>Schrader Web Solutions</b></p>
+          <p class="mb-0 small">Copyright © 2026 Detroit Roofing | Website developed & hosted by <b>Schrader Web Solutions</b></p>
         </div>
         <div class="col-md-4 text-md-end mt-2 mt-md-0">
-          <p class="mb-0 small">Privacy Policy | Terms Conditions</p>
+          <p class="mb-0 small">Privacy Policy | Terms & Conditions</p>
         </div>
       </div>
     </div>
   </div>
 </footer>
-
 
     </main>
 
