@@ -8,7 +8,7 @@
       <div class="project-card">
         <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&q=80&w=600" alt="Luxury Shingle Roofing">
         <div class="card-content">
-          <span class="tag" style="background: #fbbf24; color: #000;">Installation</span>
+          <span class="tag" style="background:#fbbf24;color:#000;">Installation</span>
           <h3>Architectural Shingles</h3>
           <p>Premium weather-shield installation with a 30-year warranty for a modern suburban home.</p>
         </div>
@@ -17,7 +17,7 @@
       <div class="project-card">
         <img src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&q=80&w=600" alt="Modern Metal Roof">
         <div class="card-content">
-          <span class="tag" style="background: #38bdf8; color: #000;">Modern</span>
+          <span class="tag" style="background:#38bdf8;color:#000;">Modern</span>
           <h3>Standing Seam Metal</h3>
           <p>Energy-efficient, sleek charcoal metal roofing designed for maximum durability and heat reflection.</p>
         </div>
@@ -26,7 +26,7 @@
       <div class="project-card">
         <img src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&q=80&w=600" alt="Roof Repair Work">
         <div class="card-content">
-          <span class="tag" style="background: #f87171; color: #fff;">Restoration</span>
+          <span class="tag" style="background:#f87171;color:#fff;">Restoration</span>
           <h3>Storm Damage Repair</h3>
           <p>Emergency structural reinforcement and leak prevention following severe hail impact.</p>
         </div>
@@ -35,95 +35,148 @@
       <div class="project-card">
         <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600" alt="Commercial Flat Roof">
         <div class="card-content">
-          <span class="tag" style="background: #4ade80; color: #000;">Commercial</span>
+          <span class="tag" style="background:#4ade80;color:#000;">Commercial</span>
           <h3>TPO Flat System</h3>
           <p>Large-scale industrial TPO membrane installation featuring advanced drainage and insulation.</p>
         </div>
       </div>
 
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=600" alt="Roof Inspection">
+        <div class="card-content">
+          <span class="tag" style="background:#a78bfa;color:#fff;">Inspection</span>
+          <h3>Full Roof Inspection</h3>
+          <p>Comprehensive 40-point inspection identifying potential issues before they become costly repairs.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&q=80&w=600" alt="Gutter Installation">
+        <div class="card-content">
+          <span class="tag" style="background:#fb923c;color:#fff;">Gutters</span>
+          <h3>Seamless Gutter Install</h3>
+          <p>Custom-fit seamless aluminum gutters with leaf guards to protect your home year-round.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" alt="Roof Replacement">
+        <div class="card-content">
+          <span class="tag" style="background:#34d399;color:#000;">Replacement</span>
+          <h3>Full Roof Replacement</h3>
+          <p>Complete tear-off and replacement with impact-resistant shingles and enhanced underlayment.</p>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Arrows INSIDE carousel-outer, overlaid on top of cards -->
     <button class="carousel-arrow arrow-prev" id="arrowPrev" onclick="slideCarousel(-1)">&#8249;</button>
     <button class="carousel-arrow arrow-next" id="arrowNext" onclick="slideCarousel(1)">&#8250;</button>
 
-    <!-- Dot Indicators -->
     <div class="carousel-dots" id="carouselDots">
       <span class="dot active" onclick="goToSlide(0)"></span>
       <span class="dot" onclick="goToSlide(1)"></span>
       <span class="dot" onclick="goToSlide(2)"></span>
       <span class="dot" onclick="goToSlide(3)"></span>
+      <span class="dot" onclick="goToSlide(4)"></span>
+      <span class="dot" onclick="goToSlide(5)"></span>
+      <span class="dot" onclick="goToSlide(6)"></span>
     </div>
 
   </div>
 </section>
 
 <script>
+(function() {
   let currentSlide = 0;
   let autoPlayTimer = null;
-  const wrapper = document.getElementById('carouselWrapper');
-  const dots = document.querySelectorAll('.dot');
-  const cards = wrapper.querySelectorAll('.project-card');
-  const total = cards.length;
+  let isDragging = false;
+  let dragStartX = 0;
+  let scrollStart = 0;
+  let hasDragged = false;
 
-  function isMobile() {
-    return window.innerWidth <= 991;
-  }
+  const wrapper = document.getElementById('carouselWrapper');
+  const dots    = document.querySelectorAll('.dot');
+  const cards   = wrapper.querySelectorAll('.project-card');
+  const total   = cards.length;
+
+  function isMobile() { return window.innerWidth <= 991; }
 
   function updateDots() {
     dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
   }
 
+  /* ── Slide to index — works on both desktop & mobile ── */
   function goToSlide(index) {
-    if (!isMobile()) return;
-    currentSlide = (index + total) % total;
-    const cardWidth = cards[0].offsetWidth + 16; // 16 = gap
+    currentSlide = ((index % total) + total) % total;
+    const cardWidth = cards[0].offsetWidth + 16;
     wrapper.scrollTo({ left: cardWidth * currentSlide, behavior: 'smooth' });
     updateDots();
   }
 
-  function slideCarousel(dir) {
-    goToSlide(currentSlide + dir);
-    resetAutoPlay(); // reset timer when user clicks
-  }
+  function slideCarousel(dir) { goToSlide(currentSlide + dir); resetAutoPlay(); }
 
-  // Sync dots on manual swipe
+  /* Sync dots on scroll */
   wrapper.addEventListener('scroll', () => {
-    if (!isMobile()) return;
     const cardWidth = cards[0].offsetWidth + 16;
     currentSlide = Math.round(wrapper.scrollLeft / cardWidth);
     updateDots();
   });
 
-  // Pause autoplay on touch
-  wrapper.addEventListener('touchstart', () => clearInterval(autoPlayTimer));
-  wrapper.addEventListener('touchend', () => startAutoPlay());
+  /* ── Mouse drag — desktop & mobile ── */
+  wrapper.addEventListener('mousedown', (e) => {
+    isDragging  = true;
+    hasDragged  = false;
+    dragStartX  = e.pageX;
+    scrollStart = wrapper.scrollLeft;
+    wrapper.style.cursor = 'grabbing';
+    wrapper.style.userSelect = 'none';
+    clearInterval(autoPlayTimer);
+    e.preventDefault();
+  });
 
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const delta = dragStartX - e.pageX;
+    if (Math.abs(delta) > 5) hasDragged = true;
+    wrapper.scrollLeft = scrollStart + delta;
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    wrapper.style.cursor = '';
+    wrapper.style.userSelect = '';
+    /* Snap to nearest card */
+    const cardWidth = cards[0].offsetWidth + 16;
+    currentSlide = Math.round(wrapper.scrollLeft / cardWidth);
+    goToSlide(currentSlide);
+    startAutoPlay();
+    /* Prevent click firing after drag */
+    if (hasDragged) e.stopPropagation();
+  });
+
+  /* ── Touch pause/resume ── */
+  wrapper.addEventListener('touchstart', () => clearInterval(autoPlayTimer), { passive: true });
+  wrapper.addEventListener('touchend',   startAutoPlay, { passive: true });
+
+  /* ── Autoplay — runs on both desktop & mobile ── */
   function startAutoPlay() {
     clearInterval(autoPlayTimer);
-    autoPlayTimer = setInterval(() => {
-      if (isMobile()) goToSlide(currentSlide + 1);
-    }, 3000); // every 3 seconds
+    autoPlayTimer = setInterval(() => goToSlide(currentSlide + 1), 3000);
   }
 
-  function resetAutoPlay() {
-    clearInterval(autoPlayTimer);
-    startAutoPlay();
-  }
+  function resetAutoPlay() { clearInterval(autoPlayTimer); startAutoPlay(); }
 
-  // Show/hide arrows & dots based on screen size
-  function toggleCarouselControls() {
-    const controls = document.querySelectorAll('.carousel-arrow, .carousel-dots');
-    controls.forEach(el => {
+  /* ── Show/hide arrows & dots (mobile only) ── */
+  function toggleControls() {
+    document.querySelectorAll('.carousel-arrow, .carousel-dots').forEach(el => {
       el.style.display = isMobile() ? '' : 'none';
     });
-    if (isMobile()) {
-      startAutoPlay();
-    } else {
-      clearInterval(autoPlayTimer);
-    }
   }
 
-  toggleCarouselControls();
-  window.addEventListener('resize', toggleCarouselControls);
+  toggleControls();
+  window.addEventListener('resize', toggleControls);
+  startAutoPlay();
+})();
 </script>

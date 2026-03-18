@@ -1,78 +1,91 @@
 <section class="hero-section">
   <div class="hero-bg"></div>
   <div class="container-fluid hero-inner">
-    <div class="row align-items-center gx-2">
+    <div class="row align-items-start gx-2">
 
+      <!-- Left Content -->
       <div class="col-md-8 col-12">
-  <div class="right-side-section me-md-5 me-0 ms-md-4 ms-0 px-3 px-md-0">
+        <div class="right-side-section  me-md-5 me-0 ms-md-4 ms-0 px-3 px-md-0">
 
-    <div class="logo-wrapper">
-      <a href="{{ '/' | url }}" aria-label="Detroit Roofing Home">
-        <div class="logo" style="background-image: url('{{ '/images/logo.jpeg' | url }}');"></div>
-      </a>
-    </div>
+          <div class="logo-wrapper mt-5">
+            <a href="{{ '/' | url }}" aria-label="Detroit Roofing Home">
+              <div class="logo" style="background-image: url('{{ '/images/logo.jpeg' | url }}');"></div>
+            </a>
+          </div>
 
-    <h1 class="hero-title mb-3">
-      <span class="hero-title-text">
-        Detroit <span>Residential</span> Roofing Services
-      </span>
-    </h1>
+          <h1 class="hero-title mb-3">
+            <span class="hero-title-text">
+              Detroit <span>Residential</span> Roofing Services
+            </span>
+          </h1>
 
-<h3 class="hero-subtitle">
-  Lorem Ipsum is simply dummy text of the printing and
-  typesetting industry. Lorem Ipsum has been the industry's standard.
-</h3>
+          <h3 class="hero-subtitle">
+            Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the industry's standard.
+          </h3>
 
         </div>
       </div>
 
-      <div class="col-md-4 col-12 mt-4 mt-md-5">
-        <div class="form-container">
-          <div class="appointment-card p-4">
-            <h5 class="text-center mb-1">Book Your</h5>
-            <div class="text-center mb-3">
-              <span class="appointment-pill d-inline-block">Appointment Now</span>
-            </div>
-            <form>
-              <div class="row g-2">
-                <div class="col-6">
-                  <input class="form-control rounded-input" placeholder="First Name *" />
-                </div>
-                <div class="col-6">
-                  <input class="form-control rounded-input" placeholder="Last Name *" />
-                </div>
-              </div>
-              <div class="row g-2 mt-2">
-                <div class="col-6">
-                  <input class="form-control rounded-input" placeholder="Phone Number *" />
-                </div>
-                <div class="col-6">
-                  <input type="email" class="form-control rounded-input" placeholder="Email Address *" />
-                </div>
-              </div>
-              <div class="mt-2">
-                <input class="form-control rounded-input" placeholder="Zip Code *" />
-              </div>
-              <div class="mt-2">
-                <select class="form-select rounded-input">
-                  <option selected>How Did You Hear About Us?</option>
-                </select>
-              </div>
-              <div class="mt-2">
-                <textarea class="form-control rounded-input" rows="4" placeholder="How Can We Help You?"></textarea>
-              </div>
-              <div class="mt-2">
-                <select class="form-select rounded-input">
-                  <option selected>Book An Appointment?</option>
-                </select>
-              </div>
-              <div class="mt-3">
-                <button type="button" class="btn btn-danger w-100 btn-cta">START BOOKING NOW</button>
-              </div>
-            </form>
+      <!-- Right Form -->
+<!-- Right Form -->
+<div class="col-md-4 col-12 mt-4 mt-md-0">
+  <div class="form-container mt-5">  
+    <div class="appointment-card p-4">
+      <h5 class="text-center mb-1">Book Your</h5>
+      <div class="text-center mb-3">
+        <span class="appointment-pill d-inline-block">Appointment Now</span>
+      </div>
+      <form>
+        <div class="row g-2">
+          <div class="col-6">
+            <input class="form-control rounded-input" placeholder="First Name *" />
+          </div>
+          <div class="col-6">
+            <input class="form-control rounded-input" placeholder="Last Name *" />
           </div>
         </div>
-      </div>
+        <div class="row g-2 mt-2">
+          <div class="col-6">
+            <input class="form-control rounded-input" placeholder="Phone Number *" />
+          </div>
+          <div class="col-6">
+            <input type="email" class="form-control rounded-input" placeholder="Email Address *" />
+          </div>
+        </div>
+        <div class="mt-2">
+          <input class="form-control rounded-input" placeholder="Zip Code *" />
+        </div>
+        <div class="mt-2">
+          <select class="form-select rounded-input">
+            <option value="" selected disabled>How Did You Hear About Us?</option>
+            <option value="facebook">Facebook</option>
+            <option value="radio">Radio</option>
+            <option value="tv">TV</option>
+            <option value="google-search">Google Search</option>
+            <option value="google-ad">Google Ad</option>
+            <option value="direct-mail">Direct Mail</option>
+            <option value="referral">Referral</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="mt-2">
+          <textarea class="form-control rounded-input" rows="4" placeholder="How Can We Help You?"></textarea>
+        </div>
+        <div class="mt-2">
+          <select class="form-select rounded-input">
+            <option value="" selected disabled>Book An Appointment?</option>
+            <option value="yes">Yes</option>
+            <option value="no">No (Reach Out To Schedule)</option>
+          </select>
+        </div>
+        <div class="mt-3">
+          <button type="button" class="btn btn-danger w-100 btn-cta">START BOOKING NOW</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
     </div>
   </div>
