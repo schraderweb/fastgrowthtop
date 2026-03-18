@@ -5,68 +5,51 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <title>Home</title>
 
-    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
 
-    <!-- Optional: Bootstrap Icons for carets/checks -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="/roofer/css/style.css" />
   </head>
   <body>
     
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
 
-<!-- ① MOBILE TOPBAR -->
 <div class="mobile-topbar">
 
-  <!-- Phone on the LEFT -->
   <a href="tel:8328107822" class="topbar-phone">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-    </svg>
+    <i class="bi bi-telephone-fill"></i>
     (832) 810-7822
   </a>
 
-  <!-- Hamburger on the RIGHT -->
   <button class="hamburger" id="hamburger" aria-label="Open menu">
-    <svg id="hamIcon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
-      <line x1="3" y1="6"  x2="21" y2="6"/>
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
-    </svg>
+    <i id="hamIcon" class="bi bi-list"></i>
   </button>
 </div>
 
-<!-- ② OVERLAY -->
 <div class="overlay" id="overlay"></div>
 
-<!-- ③ DRAWER -->
 <div class="mobile-drawer" id="drawer">
 
   <div class="drawer-header">
-    <a class="drawer-logo" href="/">DETROIT ROOFING</a>
+    <a class="drawer-logo" href="/roofer/">DETROIT ROOFING</a>
     <button class="close-btn" id="closeBtn" aria-label="Close">
-      <svg viewBox="0 0 24 24">
-        <line x1="4" y1="4" x2="20" y2="20"/>
-        <line x1="20" y1="4" x2="4" y2="20"/>
-      </svg>
+      <i class="bi bi-x-lg"></i>
     </button>
   </div>
 
   <ul class="drawer-nav">
-    <li><button class="m-nav-btn" onclick="window.location='/residential-roofing/'">Residential Roofing</button></li>
-    <li><button class="m-nav-btn" onclick="window.location='/roof-repair/'">Roof Repair</button></li>
-    <li><button class="m-nav-btn" onclick="window.location='/commercial-roofing/'">Commercial Roofing</button></li>
-    <li><button class="m-nav-btn" onclick="window.location='/about/'">About Us</button></li>
-    <li><button class="m-nav-btn" onclick="window.location='/contact/'">Contact Us</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/residential-roofing/'">Residential Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/roof-repair/'">Roof Repair</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/commercial-roofing/'">Commercial Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/about/'">About Us</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/contact/'">Contact Us</button></li>
   </ul>
 
   <div class="drawer-phone">
     <a href="tel:8328107822" class="drawer-phone-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-      </svg>
+      <i class="bi bi-telephone-fill"></i>
       (832) 810-7822
     </a>
   </div>
@@ -80,19 +63,16 @@
   const overlay   = document.getElementById('overlay');
   const closeBtn  = document.getElementById('closeBtn');
 
-  const hamOpen  = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
-  const hamClose = '<line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>';
-
   function openDrawer() {
     drawer.classList.add('open');
     overlay.classList.add('active');
-    hamIcon.innerHTML = hamClose;
+    hamIcon.className = 'bi bi-x-lg';
     document.body.style.overflow = 'hidden';
   }
   function closeDrawer() {
     drawer.classList.remove('open');
     overlay.classList.remove('active');
-    hamIcon.innerHTML = hamOpen;
+    hamIcon.className = 'bi bi-list';
     document.body.style.overflow = '';
   }
 
@@ -104,21 +84,17 @@
   <ul>
     <li class="nav-spacer" aria-hidden="true"></li>
 
-    <!-- Centered links group -->
     <li class="nav-links-group">
-      <button class="nav-btn" onclick="window.location='/residential-roofing/'">Residential Roofing</button>
-      <button class="nav-btn" onclick="window.location='/roof-repair/'">Roof Repair</button>
-      <button class="nav-btn" onclick="window.location='/commercial-roofing/'">Commercial Roofing</button>
-      <button class="nav-btn" onclick="window.location='/about/'">About Us</button>
-      <button class="nav-btn" onclick="window.location='/contact/'">Contact Us</button>
+      <button class="nav-btn" onclick="window.location='/roofer/residential-roofing/'">Residential Roofing</button>
+      <button class="nav-btn" onclick="window.location='/roofer/roof-repair/'">Roof Repair</button>
+      <button class="nav-btn" onclick="window.location='/roofer/commercial-roofing/'">Commercial Roofing</button>
+      <button class="nav-btn" onclick="window.location='/roofer/about/'">About Us</button>
+      <button class="nav-btn" onclick="window.location='/roofer/contact/'">Contact Us</button>
     </li>
 
-    <!-- Phone — right side -->
     <li class="nav-phone">
       <a href="tel:8328107822" class="nav-phone-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-        </svg>
+        <i class="bi bi-telephone-fill"></i>
         (832) 810-7822
       </a>
     </li>
@@ -132,19 +108,20 @@
   <div class="container-fluid hero-inner">
     <div class="row align-items-center gx-2">
 
-      <!-- Left Content -->
       <div class="col-md-8 col-12">
-        <div class="right-side-section me-md-5 me-0 ms-md-4 ms-0 px-3 px-md-0">
+  <div class="right-side-section me-md-5 me-0 ms-md-4 ms-0 px-3 px-md-0">
 
-          <div class="logo-wrapper">
-            <div class="logo" style="background-image: url('/images/logo.jpeg');"></div>
-          </div>
+    <div class="logo-wrapper">
+      <a href="/roofer/" aria-label="Detroit Roofing Home">
+        <div class="logo" style="background-image: url('/roofer/images/logo.jpeg');"></div>
+      </a>
+    </div>
 
-<h1 class="hero-title mb-3">
-  <span class="hero-title-text">
-    Detroit <span>Residential</span> Roofing Services
-  </span>
-</h1>
+    <h1 class="hero-title mb-3">
+      <span class="hero-title-text">
+        Detroit <span>Residential</span> Roofing Services
+      </span>
+    </h1>
 
 <h3 class="hero-subtitle">
   Lorem Ipsum is simply dummy text of the printing and
@@ -154,8 +131,7 @@
         </div>
       </div>
 
-      <!-- Right Form (unchanged) -->
-      <div class="col-md-4 col-12 mt-4 mt-md-0">
+      <div class="col-md-4 col-12 mt-4 mt-md-5">
         <div class="form-container">
           <div class="appointment-card p-4">
             <h5 class="text-center mb-1">Book Your</h5>
@@ -606,82 +582,6 @@
   </div>
 </section>
 
-<style>
-  .review-section {
-    background-color: #fdfbe8;
-    font-family: 'Arial', sans-serif;
-  }
-
-  .text-google   { color: #4285F4; }
-  .text-facebook { color: #1877F2; }
-
-  .review-badge {
-    text-decoration: none;
-    color: #555;
-    width: 140px;        /* reduced from 200px */
-    height: 140px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 5px;
-    transition: transform 0.3s ease;
-  }
-
-  .review-badge:hover { transform: scale(1.05); }
-
-  .inner-content {
-    background: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: 300;
-    font-size: 0.85rem;   /* reduced from 1.1rem */
-    line-height: 1.2;
-    z-index: 2;
-  }
-
-  .google-ring {
-    background: conic-gradient(
-      #4285F4 0deg 90deg,
-      #EA4335 90deg 180deg,
-      #FBBC05 180deg 270deg,
-      #34A853 270deg 360deg
-    );
-    padding: 5px;
-  }
-
-  .facebook-ring {
-    background: #3b5998;
-    padding: 5px;
-  }
-
-  /* Tablet */
-  @media (max-width: 768px) {
-    .review-badge {
-      width: 120px;
-      height: 120px;
-    }
-    .inner-content { font-size: 0.78rem; }
-    .inner-content img { width: 42px !important; }
-  }
-
-  /* Mobile */
-  @media (max-width: 576px) {
-    .review-badge {
-      width: 100px;
-      height: 100px;
-    }
-    .inner-content { font-size: 0.72rem; }
-    .inner-content img { width: 34px !important; }
-  }
-</style>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d157500.5136689516!2d-83.09911505000001!3d42.352595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824ca0110cb1d75%3A0x5776864e35b9c4d2!2sDetroit%2C%20MI%2C%20USA!5e1!3m2!1sen!2s!4v1773570318015!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 <footer class="footer-main text-white pt-5">
@@ -691,50 +591,50 @@
       <!-- Logo & Social -->
       <div class="col-lg-3">
         <div class="mb-4">
-          <img src="/images/logo.jpeg" alt="Detroit Roofing Logo" class="img-fluid" style="max-height: 150px;">
-        </div>
-        <p class="small lh-base opacity-75">
-          We always deliver 100% customer satisfaction and absolute quality work without compromise, just like we've been doing since 1982.
-        </p>
+  <a href="/roofer/" aria-label="Detroit Roofing Home">
+    <img src="/roofer/images/logo.jpeg" alt="Detroit Roofing Logo" class="img-fluid" style="max-height: 150px;">
+  </a>
+</div>
+<p class="small lh-base opacity-75">
+  We always deliver 100% customer satisfaction and absolute quality work without compromise, just like we've been doing since 1982.
+</p>
         <div class="mt-4">
           <h5 class="footer-heading">Follow Us</h5>
           <div class="d-flex gap-2 mt-3">
-            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center">f</a>
-            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center">in</a>
-            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center">X</a>
+            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center"><i class="bi bi-twitter-x"></i></a>
           </div>
         </div>
       </div>
 
-      <!-- Quick Links — matches navbar -->
+      <!-- Quick Links -->
       <div class="col-lg-5 px-lg-5">
         <h5 class="footer-heading">Quick Links</h5>
         <div class="row mt-4">
           <div class="col-6">
             <ul class="list-unstyled footer-list">
-              <li><a href="/residential-roofing/">Residential Roofing</a></li>
-              <li><a href="/roof-repair/">Roof Repair</a></li>
-              <li><a href="/commercial-roofing/">Commercial Roofing</a></li>
-              <li><a href="/about/">About Us</a></li>
-              <li><a href="/contact/">Contact Us</a></li>
+              <li><a href="/roofer/residential-roofing/">Residential Roofing</a></li>
+              <li><a href="/roofer/roof-repair/">Roof Repair</a></li>
+              <li><a href="/roofer/commercial-roofing/">Commercial Roofing</a></li>
+              <li><a href="/roofer/about/">About Us</a></li>
+              <li><a href="/roofer/contact/">Contact Us</a></li>
             </ul>
           </div>
           <div class="col-6">
             <ul class="list-unstyled footer-list">
-              <li><a href="/residential-roofing/free-roof-inspection/">Free Roof Inspection</a></li>
-              <li><a href="/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
-              <li><a href="/roof-repair/storm-damage/">Storm Damage Repair</a></li>
-              <li><a href="/roof-repair/hail-damage/">Hail Damage Repair</a></li>
-              <li><a href="/residential-roofing/gallery/">Gallery</a></li>
+              <li><a href="/roofer/residential-roofing/free-roof-inspection/">Free Roof Inspection</a></li>
+              <li><a href="/roofer/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
+              <li><a href="/roofer/roof-repair/storm-damage/">Storm Damage Repair</a></li>
+              <li><a href="/roofer/roof-repair/hail-damage/">Hail Damage Repair</a></li>
+              <li><a href="/roofer/residential-roofing/gallery/">Gallery</a></li>
             </ul>
           </div>
         </div>
 
-        <!-- Phone CTA -->
+        <!-- Phone CTA — Bootstrap Icon -->
         <a href="tel:8328107822" class="footer-phone-cta mt-4 d-inline-flex align-items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-          </svg>
+          <i class="bi bi-telephone-fill"></i>
           (832) 810-7822
         </a>
       </div>
@@ -758,9 +658,8 @@
             <li><span>Tue:</span> <span>9:00 AM – 9:00 PM</span></li>
             <li><span>Wed:</span> <span>9:00 AM – 9:00 PM</span></li>
             <li><span>Thu:</span> <span>9:00 AM – 9:00 PM</span></li>
-                       
-            <li><span>Sat:</span>       <span>9:00 AM – 9:00 PM</span></li>
-            <li><span>Sun:</span>       <span>9:00 AM – 9:00 PM</span></li>
+            <li><span>Sat:</span> <span>9:00 AM – 9:00 PM</span></li>
+            <li><span>Sun:</span> <span>9:00 AM – 9:00 PM</span></li>
           </ul>
         </div>
       </div>

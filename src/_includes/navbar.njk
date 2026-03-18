@@ -2,21 +2,17 @@
   <ul>
     <li class="nav-spacer" aria-hidden="true"></li>
 
-    <!-- Centered links group -->
     <li class="nav-links-group">
-      <button class="nav-btn" onclick="window.location='/residential-roofing/'">Residential Roofing</button>
-      <button class="nav-btn" onclick="window.location='/roof-repair/'">Roof Repair</button>
-      <button class="nav-btn" onclick="window.location='/commercial-roofing/'">Commercial Roofing</button>
-      <button class="nav-btn" onclick="window.location='/about/'">About Us</button>
-      <button class="nav-btn" onclick="window.location='/contact/'">Contact Us</button>
+      <button class="nav-btn" onclick="window.location='{{ '/residential-roofing/' | url }}'">Residential Roofing</button>
+      <button class="nav-btn" onclick="window.location='{{ '/roof-repair/' | url }}'">Roof Repair</button>
+      <button class="nav-btn" onclick="window.location='{{ '/commercial-roofing/' | url }}'">Commercial Roofing</button>
+      <button class="nav-btn" onclick="window.location='{{ '/about/' | url }}'">About Us</button>
+      <button class="nav-btn" onclick="window.location='{{ '/contact/' | url }}'">Contact Us</button>
     </li>
 
-    <!-- Phone — right side -->
     <li class="nav-phone">
       <a href="tel:8328107822" class="nav-phone-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-        </svg>
+        <i class="bi bi-telephone-fill"></i>
         (832) 810-7822
       </a>
     </li>

@@ -1,55 +1,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
 
-<!-- ① MOBILE TOPBAR -->
 <div class="mobile-topbar">
 
-  <!-- Phone on the LEFT -->
   <a href="tel:8328107822" class="topbar-phone">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-    </svg>
+    <i class="bi bi-telephone-fill"></i>
     (832) 810-7822
   </a>
 
-  <!-- Hamburger on the RIGHT -->
   <button class="hamburger" id="hamburger" aria-label="Open menu">
-    <svg id="hamIcon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
-      <line x1="3" y1="6"  x2="21" y2="6"/>
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
-    </svg>
+    <i id="hamIcon" class="bi bi-list"></i>
   </button>
 </div>
 
-<!-- ② OVERLAY -->
 <div class="overlay" id="overlay"></div>
 
-<!-- ③ DRAWER -->
 <div class="mobile-drawer" id="drawer">
 
   <div class="drawer-header">
-    <a class="drawer-logo" href="/">DETROIT ROOFING</a>
+    <a class="drawer-logo" href="{{ '/' | url }}">DETROIT ROOFING</a>
     <button class="close-btn" id="closeBtn" aria-label="Close">
-      <svg viewBox="0 0 24 24">
-        <line x1="4" y1="4" x2="20" y2="20"/>
-        <line x1="20" y1="4" x2="4" y2="20"/>
-      </svg>
+      <i class="bi bi-x-lg"></i>
     </button>
   </div>
 
   <ul class="drawer-nav">
-    <li><button class="m-nav-btn" onclick="window.location='/residential-roofing/'">Residential Roofing</button></li>
-    <li><button class="m-nav-btn" onclick="window.location='/roof-repair/'">Roof Repair</button></li>
-    <li><button class="m-nav-btn" onclick="window.location='/commercial-roofing/'">Commercial Roofing</button></li>
-    <li><button class="m-nav-btn" onclick="window.location='/about/'">About Us</button></li>
-    <li><button class="m-nav-btn" onclick="window.location='/contact/'">Contact Us</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='{{ '/residential-roofing/' | url }}'">Residential Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='{{ '/roof-repair/' | url }}'">Roof Repair</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='{{ '/commercial-roofing/' | url }}'">Commercial Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='{{ '/about/' | url }}'">About Us</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='{{ '/contact/' | url }}'">Contact Us</button></li>
   </ul>
 
   <div class="drawer-phone">
     <a href="tel:8328107822" class="drawer-phone-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-      </svg>
+      <i class="bi bi-telephone-fill"></i>
       (832) 810-7822
     </a>
   </div>
@@ -63,19 +47,16 @@
   const overlay   = document.getElementById('overlay');
   const closeBtn  = document.getElementById('closeBtn');
 
-  const hamOpen  = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
-  const hamClose = '<line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>';
-
   function openDrawer() {
     drawer.classList.add('open');
     overlay.classList.add('active');
-    hamIcon.innerHTML = hamClose;
+    hamIcon.className = 'bi bi-x-lg';
     document.body.style.overflow = 'hidden';
   }
   function closeDrawer() {
     drawer.classList.remove('open');
     overlay.classList.remove('active');
-    hamIcon.innerHTML = hamOpen;
+    hamIcon.className = 'bi bi-list';
     document.body.style.overflow = '';
   }
 

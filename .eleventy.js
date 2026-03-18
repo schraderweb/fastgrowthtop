@@ -11,8 +11,9 @@ module.exports = function (eleventyConfig) {
       input: "src",       
       includes: "_includes",
       data: "_data",
-      output: "public"
+      output:   "public/roofer"
     },
+    pathPrefix: "/roofer/",
 
     templateFormats: ["html", "md", "njk"],
 
