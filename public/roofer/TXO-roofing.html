@@ -18,6 +18,50 @@
   <link rel="manifest"                            href="/roofer/images/TXO-assets/fav-icon/site.webmanifest">
 
  <link rel="stylesheet" href="/roofer/css/style.css" />
+    <style>
+      :root {
+        --color-primary:       #825fa4;
+        --color-primary-light: #9573b5;
+        --color-primary-mid:   #6d4a8f;
+        --color-primary-dark:  #583679;
+        --color-primary-form:  rgba(130, 95, 164, 0.92);
+        --color-overlay:       rgba(109, 74, 143, 0.78);
+        --color-text-navy:     #825fa4;
+        --color-bg-light-blue: #f7f4fa;
+      }
+      .main-nav, .mobile-topbar {
+        background: rgba(130, 95, 164, 0.15) !important;
+      }
+      .stat-box {
+        background: #5a397b !important;
+      }
+      .hero-title-text span {
+        color: #b090cc !important;
+      }
+      .partner-logo {
+        transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+        filter: grayscale(100%);
+        opacity: 0.65;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 110px;
+        height: 60px;
+        padding: 5px;
+      }
+      .partner-logo:hover {
+        transform: translateY(-3px);
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+      .partner-logo img {
+        max-height: 50px;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+      }
+    </style>
   </head>
   <body>
     
@@ -641,6 +685,57 @@
   startAutoPlay();
 })();
 </script>
+
+<!-- Partner & Accreditation Logos Section -->
+<section class="partner-logos-sec py-5 bg-light border-top border-bottom text-center">
+  <div class="container">
+    <h5 class="text-uppercase small fw-bold mb-4" style="color: var(--color-primary); letter-spacing: 0.15em; opacity: 0.85;">Accreditations & Certified Partner Brands</h5>
+    <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+      
+      <div class="partner-logo" title="AATC">
+        <img src="/roofer/images/TXO-assets/logos/aatc_logo.png" alt="AATC">
+      </div>
+
+      <div class="partner-logo" title="Carlisle SynTec">
+        <img src="/roofer/images/TXO-assets/logos/Carlisle_SynTec_logo.png" alt="Carlisle SynTec">
+      </div>
+
+      <div class="partner-logo" title="CR R S">
+        <img src="/roofer/images/TXO-assets/logos/CR_R_S.png" alt="CR R S">
+      </div>
+
+      <div class="partner-logo" title="Firestone Building Products">
+        <img src="/roofer/images/TXO-assets/logos/Firestone.png" alt="Firestone Building Products">
+      </div>
+
+      <div class="partner-logo" title="Inland Coatings">
+        <img src="/roofer/images/TXO-assets/logos/Inland_logo.png" alt="Inland Coatings">
+      </div>
+
+      <div class="partner-logo" title="Locally Owned & Bonded">
+        <img src="/roofer/images/TXO-assets/logos/locally_owned_bonded.png" alt="Locally Owned & Bonded">
+      </div>
+
+      <div class="partner-logo" title="Logo Angle">
+        <img src="/roofer/images/TXO-assets/logos/logoangle.png" alt="Logo Angle">
+      </div>
+
+      <div class="partner-logo" title="MBCI">
+        <img src="/roofer/images/TXO-assets/logos/MBCI.png" alt="MBCI">
+      </div>
+
+      <div class="partner-logo" title="Polyglass">
+        <img src="/roofer/images/TXO-assets/logos/Polyglass_logo.png" alt="Polyglass">
+      </div>
+
+      <div class="partner-logo" title="TAMKO Mastercraft PRO Certified Contractor">
+        <img src="/roofer/images/TXO-assets/logos/TAMKO_logo.png" alt="TAMKO">
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="review-section py-5 text-center">
   <div class="container">
     <h3 class="fw-bold mb-1 text-dark">Please leave a review for us on</h3>
