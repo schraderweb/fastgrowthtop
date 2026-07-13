@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <title>TXO Restoration | Fort Worth, TX</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Favicons -->
+  <link rel="icon" type="image/png" href="/roofer/txo-assets/fav-icon/TXO-favicon.png">
+
+ <link rel="stylesheet" href="/roofer/css/style.css" />
+  </head>
+  <body>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+<div class="mobile-topbar">
+
+  <a href="tel:8173327733" class="topbar-phone">
+    <i class="bi bi-telephone-fill"></i>
+    (817) 332-7733
+  </a>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <i id="hamIcon" class="bi bi-list"></i>
+  </button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="mobile-drawer" id="drawer">
+
+  <div class="drawer-header">
+    <a class="drawer-logo" href="/roofer/TXO-roofing.html">TXO RESTORATION</a>
+    <button class="close-btn" id="closeBtn" aria-label="Close">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <ul class="drawer-nav">
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/residential-roofing/'">Residential Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/roof-repair/'">Roof Repair</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/commercial-roofing/'">Commercial Roofing</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/about/'">About Us</button></li>
+    <li><button class="m-nav-btn" onclick="window.location='/roofer/contact/'">Contact Us</button></li>
+  </ul>
+
+  <div class="drawer-phone">
+    <a href="tel:8173327733" class="drawer-phone-link">
+      <i class="bi bi-telephone-fill"></i>
+      (817) 332-7733
+    </a>
+  </div>
+
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const hamIcon   = document.getElementById('hamIcon');
+  const drawer    = document.getElementById('drawer');
+  const overlay   = document.getElementById('overlay');
+  const closeBtn  = document.getElementById('closeBtn');
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    overlay.classList.add('active');
+    hamIcon.className = 'bi bi-x-lg';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('active');
+    hamIcon.className = 'bi bi-list';
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+</script>
+    <nav class="main-nav">
+  <ul>
+    <li class="nav-spacer" aria-hidden="true"></li>
+
+    <li class="nav-links-group">
+      <button class="nav-btn" onclick="window.location='/roofer/residential-roofing/'">Residential Roofing</button>
+      <button class="nav-btn" onclick="window.location='/roofer/roof-repair/'">Roof Repair</button>
+      <button class="nav-btn" onclick="window.location='/roofer/commercial-roofing/'">Commercial Roofing</button>
+      <button class="nav-btn" onclick="window.location='/roofer/about/'">About Us</button>
+      <button class="nav-btn" onclick="window.location='/roofer/contact/'">Contact Us</button>
+    </li>
+
+    <li class="nav-phone">
+      <a href="tel:8173327733" class="nav-phone-link">
+        <i class="bi bi-telephone-fill"></i>
+        (817) 332-7733
+      </a>
+    </li>
+  </ul>
+</nav>
+
+    <main>
+      
+<section class="hero-section">
+  <div class="hero-bg"></div>
+  <div class="container-fluid hero-inner">
+    <div class="row align-items-start gx-2">
+
+      <!-- Left Content -->
+      <div class="col-md-8 col-12">
+        <div class="right-side-section  me-md-5 me-0 ms-md-4 ms-0 px-3 px-md-0">
+
+          <div class="logo-wrapper mt-5">
+            <a href="/roofer/TXO-roofing.html" aria-label="TXO Restoration Home">
+              <div class="logo" style="background-image: url('/roofer/txo-assets/fav-icon/TXO-favicon.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+            </a>
+          </div>
+
+          <h1 class="hero-title mb-3">
+            <span class="hero-title-text">
+              Fort Worth <span>Residential</span> Roofing Services
+            </span>
+          </h1>
+
+          <h3 class="hero-subtitle">
+            Trusted roofing contractor serving Fort Worth with quality workmanship and exceptional customer service.
+          </h3>
+
+        </div>
+      </div>
+
+      <!-- Right Form -->
+<!-- Right Form -->
+<div class="col-md-4 col-12 mt-4 mt-md-0">
+  <div class="form-container mt-5">  
+    <div class="appointment-card p-4">
+      <h5 class="text-center mb-1">Book Your</h5>
+      <div class="text-center mb-3">
+        <span class="appointment-pill d-inline-block">Appointment Now</span>
+      </div>
+      <form>
+        <div class="row g-2">
+          <div class="col-6">
+            <input class="form-control rounded-input" placeholder="First Name *" />
+          </div>
+          <div class="col-6">
+            <input class="form-control rounded-input" placeholder="Last Name *" />
+          </div>
+        </div>
+        <div class="row g-2 mt-2">
+          <div class="col-6">
+            <input class="form-control rounded-input" placeholder="Phone Number *" />
+          </div>
+          <div class="col-6">
+            <input type="email" class="form-control rounded-input" placeholder="Email Address *" />
+          </div>
+        </div>
+        <div class="mt-2">
+          <input class="form-control rounded-input" placeholder="Zip Code *" />
+        </div>
+        <div class="mt-2">
+          <select class="form-select rounded-input">
+            <option value="" selected disabled>How Did You Hear About Us?</option>
+            <option value="facebook">Facebook</option>
+            <option value="radio">Radio</option>
+            <option value="tv">TV</option>
+            <option value="google-search">Google Search</option>
+            <option value="google-ad">Google Ad</option>
+            <option value="direct-mail">Direct Mail</option>
+            <option value="referral">Referral</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="mt-2">
+          <textarea class="form-control rounded-input" rows="4" placeholder="How Can We Help You?"></textarea>
+        </div>
+        <div class="mt-2">
+          <select class="form-select rounded-input">
+            <option value="" selected disabled>Book An Appointment?</option>
+            <option value="yes">Yes</option>
+            <option value="no">No (Reach Out To Schedule)</option>
+          </select>
+        </div>
+        <div class="mt-3">
+          <button type="button" class="btn btn-danger w-100 btn-cta">START BOOKING NOW</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+<section class="company-section overflow-hidden">
+  <div class="container-fluid p-0">
+    <div class="row g-0" style="position: relative;">
+
+      <!-- Image column -->
+      <div class="col-lg-5 company-img-col"></div>
+
+      <!-- Content col -->
+      <div class="col-lg-7 offset-lg-5 about-content-bg py-5 px-4 px-lg-5 d-flex align-items-center">
+        <div class="about-card py-4">
+          <h2 class="section-title mb-4">
+            Fort Worth Local Roofer With A <br>
+            Track Record <span class="trust-pill">You Can TRUST.</span>
+          </h2>
+
+          <div class="content-text opacity-90">
+            <p>Let's be honest: Trusting a roofing contractor is tough. Everyone has heard horror stories of roofers cutting corners, using shoddy materials, and even skipping town after collecting deposits.</p>
+            <p>TXO Restoration is different. In fact, we're the <strong>polar opposite</strong>.</p>
+            <p>We're not a national roofing corporation that chooses profits over people. And we're not one of those out-of-town roofers who descend on Fort Worth whenever there's a big storm. Nope. Like our name says, we're 100% local to Fort Worth. <strong>Family owned. Family operated. Family oriented.</strong></p>
+            <p>It's why we're passionate about performing your roofing project the RIGHT WAY. That means meticulous workmanship... top-notch materials... and complete, unconditional honesty. PERIOD.</p>
+            <p>But don't take our word for it. Here's proof we're the local Fort Worth roofer you can TRUST:</p>
+          </div>
+
+          <div class="row text-center mt-5 g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+              <div class="stat-container">
+                <div class="stat-circle">15+</div>
+                <div class="stat-label">Years Serving <br> The Fort Worth Area</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-container">
+                <div class="stat-circle">19</div>
+                <div class="stat-label">5-Star <br> Online Reviews</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-container">
+                <div class="stat-circle">50</div>
+                <div class="stat-label">Years Of <br> Warranty Protection</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-container">
+                <div class="stat-circle">4.9</div>
+                <div class="stat-label">Google <br> Rating</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 d-flex flex-wrap align-items-center gap-4">
+            <a href="#" class="btn btn-contact-custom">
+              CONTACT US <span class="ms-2">❯</span>
+            </a>
+            <span class="fs-5 text-navy">or Call <strong class="text-danger">(817) 332-7733</strong></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="review-sec text-center py-5">
+  <h1 class="text-white mb-2">Our Recent Reviews</h1>
+  <p class="review-sec-sub">What our Fort Worth customers are saying</p>
+
+  <div class="review-carousel-outer">
+
+    <!-- Arrows -->
+    <button class="review-arrow review-prev" id="reviewPrev">&#8249;</button>
+    <button class="review-arrow review-next" id="reviewNext">&#8250;</button>
+
+    <!-- Track -->
+    <div class="review-track" id="reviewTrack">
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#ea4335;">S</div>
+          <div class="user-info">
+            <span class="user-name">Sarah J.</span>
+            <span class="review-date">2 weeks ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">After the last hail storm, I was stressed about leaks. These guys came out the same day for an inspection and had the shingles replaced by the weekend. Fast and professional!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#34a853;">M</div>
+          <div class="user-info">
+            <span class="user-name">Mark Thompson</span>
+            <span class="review-date">1 month ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Best roofing crew in the area. They didn't leave a single nail on my driveway. The new metal roof looks incredible and the team was respectful of our property throughout.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#4285f4;">E</div>
+          <div class="user-info">
+            <span class="user-name">Elena Rodriguez</span>
+            <span class="review-date">3 weeks ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Very transparent pricing. No hidden fees or surprises halfway through the job. It's rare to find a contractor this honest these days. Will definitely use again.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#fbbc05;">D</div>
+          <div class="user-info">
+            <span class="user-name">David L.</span>
+            <span class="review-date">2 months ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text"><b>Local Guide</b> · Had a minor leak near the chimney. They fixed it quickly and even checked the rest of the roof for free. Highly recommend to all Fort Worth homeowners.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#7c3aed;">R</div>
+          <div class="user-info">
+            <span class="user-name">Rachel Kim</span>
+            <span class="review-date">3 months ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">From the first call to the final cleanup, everything was seamless. The crew was on time every day and the new roof looks stunning. My neighbors keep asking who did it!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#0891b2;">J</div>
+          <div class="user-info">
+            <span class="user-name">James Patterson</span>
+            <span class="review-date">6 weeks ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Got three quotes and TXO Restoration was not only the most competitive but also the most thorough in their inspection. Three months later, zero issues. Outstanding work.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar" style="background-color:#059669;">T</div>
+          <div class="user-info">
+            <span class="user-name">Teresa Nguyen</span>
+            <span class="review-date">1 week ago</span>
+          </div>
+          <img src="https://img.icons8.com/color/48/google-logo.png" class="google-logo" alt="Google">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">I called on a Tuesday about an emergency leak and they were at my house by Wednesday morning. Leak fixed same day. The follow-up call to check in was a really nice touch.</p>
+      </div>
+
+    </div><!-- end track -->
+
+    <!-- Dots -->
+    <div class="review-dots" id="reviewDots"></div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  const track    = document.getElementById('reviewTrack');
+  const dotsWrap = document.getElementById('reviewDots');
+  const prevBtn  = document.getElementById('reviewPrev');
+  const nextBtn  = document.getElementById('reviewNext');
+  const cards    = track.querySelectorAll('.review-card');
+
+  let current = 0;
+  let autoTimer = null;
+  let visibleCount = getVisible();
+
+  function getVisible() {
+    return window.innerWidth < 576 ? 1 : window.innerWidth < 992 ? 2 : 3;
+  }
+
+  const total = cards.length;
+
+  /* Build dots */
+  function buildDots() {
+    visibleCount = getVisible();
+    dotsWrap.innerHTML = '';
+    const pages = total - visibleCount + 1;
+    for (let i = 0; i < pages; i++) {
+      const d = document.createElement('span');
+      d.className = 'review-dot' + (i === current ? ' active' : '');
+      d.addEventListener('click', () => { goTo(i); resetAuto(); });
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(index) {
+    visibleCount = getVisible();
+    const pages = total - visibleCount + 1;
+    current = Math.max(0, Math.min(index, pages - 1));
+    const cardW = cards[0].offsetWidth + 20;
+    track.scrollTo({ left: cardW * current, behavior: 'smooth' });
+    dotsWrap.querySelectorAll('.review-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function next() { goTo(current + 1 < total - visibleCount + 1 ? current + 1 : 0); }
+  function prev() { goTo(current > 0 ? current - 1 : total - visibleCount); }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(next, 3500);
+  }
+
+  function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+  prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
+  nextBtn.addEventListener('click', () => { next(); resetAuto(); });
+
+  /* Sync dot on manual swipe */
+  track.addEventListener('scroll', () => {
+    const cardW = cards[0].offsetWidth + 20;
+    current = Math.round(track.scrollLeft / cardW);
+    dotsWrap.querySelectorAll('.review-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  });
+
+  /* Pause on touch */
+  track.addEventListener('touchstart', () => clearInterval(autoTimer));
+  track.addEventListener('touchend', startAuto);
+
+  window.addEventListener('resize', () => { buildDots(); goTo(0); });
+
+  buildDots();
+  startAuto();
+})();
+</script>
+
+<section class="modern-carousel-section">
+  <div class="mb-2"><h1>Our Latest Projects</h1></div>
+
+  <div class="carousel-outer">
+
+    <div class="carousel-wrapper" id="carouselWrapper">
+
+      <div class="project-card">
+        <img src="/roofer/txo-assets/images/75.webp" alt="Residential Roofing Project">
+        <div class="card-content">
+          <span class="tag" style="background:#fbbf24;color:#000;">Residential</span>
+          <h3>Residential Roofing</h3>
+          <p>Professional residential roofing installation with premium materials and expert craftsmanship.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/roofer/txo-assets/images/City Of Blue Mound .webp" alt="City of Blue Mound Project">
+        <div class="card-content">
+          <span class="tag" style="background:#38bdf8;color:#000;">Commercial</span>
+          <h3>City of Blue Mound</h3>
+          <p>Commercial roofing project for the City of Blue Mound delivering durable and reliable protection.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/roofer/txo-assets/images/Cortland Riverside .webp" alt="Cortland Riverside">
+        <div class="card-content">
+          <span class="tag" style="background:#4ade80;color:#000;">Multi-Family</span>
+          <h3>Cortland Riverside</h3>
+          <p>Large-scale multi-family roofing installation at Cortland Riverside with premium materials.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/roofer/txo-assets/images/Cortland Riverside-2.webp" alt="Cortland Riverside Project">
+        <div class="card-content">
+          <span class="tag" style="background:#4ade80;color:#000;">Multi-Family</span>
+          <h3>Cortland Riverside</h3>
+          <p>Additional roofing work at Cortland Riverside ensuring complete coverage and lasting quality.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/roofer/txo-assets/images/HDRCreat.webp" alt="Creative Project">
+        <div class="card-content">
+          <span class="tag" style="background:#a78bfa;color:#fff;">Design</span>
+          <h3>Custom Roofing Design</h3>
+          <p>Innovative roofing design project showcasing creative solutions for modern architecture.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/roofer/txo-assets/images/Pilvilion townplace.webp" alt="Pavilion Townplace">
+        <div class="card-content">
+          <span class="tag" style="background:#f87171;color:#fff;">Community</span>
+          <h3>Pavilion Townplace</h3>
+          <p>Community-focused roofing project at Pavilion Townplace with attention to every detail.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/roofer/txo-assets/images/Preserve At Gateway .webp" alt="Preserve at Gateway">
+        <div class="card-content">
+          <span class="tag" style="background:#fb923c;color:#fff;">Replacement</span>
+          <h3>Preserve at Gateway</h3>
+          <p>Full roof replacement project at Preserve at Gateway ensuring lasting protection and curb appeal.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/roofer/txo-assets/images/SoupMobile .webp" alt="SoupMobile Project">
+        <div class="card-content">
+          <span class="tag" style="background:#34d399;color:#000;">Non-Profit</span>
+          <h3>SoupMobile</h3>
+          <p>Roofing project for SoupMobile supporting their mission to serve the Fort Worth community.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/roofer/txo-assets/images/SoupMobile-2.webp" alt="SoupMobile Additional Project">
+        <div class="card-content">
+          <span class="tag" style="background:#34d399;color:#000;">Non-Profit</span>
+          <h3>SoupMobile</h3>
+          <p>Continued roofing work for SoupMobile — quality roofing for a great cause.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-arrow arrow-prev" id="arrowPrev" onclick="slideCarousel(-1)">&#8249;</button>
+    <button class="carousel-arrow arrow-next" id="arrowNext" onclick="slideCarousel(1)">&#8250;</button>
+
+    <div class="carousel-dots" id="carouselDots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+      <span class="dot" onclick="goToSlide(3)"></span>
+      <span class="dot" onclick="goToSlide(4)"></span>
+      <span class="dot" onclick="goToSlide(5)"></span>
+      <span class="dot" onclick="goToSlide(6)"></span>
+      <span class="dot" onclick="goToSlide(7)"></span>
+      <span class="dot" onclick="goToSlide(8)"></span>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  let currentSlide = 0;
+  let autoPlayTimer = null;
+  let isDragging = false;
+  let dragStartX = 0;
+  let scrollStart = 0;
+  let hasDragged = false;
+
+  const wrapper = document.getElementById('carouselWrapper');
+  const dots    = document.querySelectorAll('.dot');
+  const cards   = wrapper.querySelectorAll('.project-card');
+  const total   = cards.length;
+
+  function isMobile() { return window.innerWidth <= 991; }
+
+  function updateDots() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+
+  function goToSlide(index) {
+    currentSlide = ((index % total) + total) % total;
+    const cardWidth = cards[0].offsetWidth + 16;
+    wrapper.scrollTo({ left: cardWidth * currentSlide, behavior: 'smooth' });
+    updateDots();
+  }
+
+  function slideCarousel(dir) { goToSlide(currentSlide + dir); resetAutoPlay(); }
+
+  wrapper.addEventListener('scroll', () => {
+    const cardWidth = cards[0].offsetWidth + 16;
+    currentSlide = Math.round(wrapper.scrollLeft / cardWidth);
+    updateDots();
+  });
+
+  wrapper.addEventListener('mousedown', (e) => {
+    isDragging  = true;
+    hasDragged  = false;
+    dragStartX  = e.pageX;
+    scrollStart = wrapper.scrollLeft;
+    wrapper.style.cursor = 'grabbing';
+    wrapper.style.userSelect = 'none';
+    clearInterval(autoPlayTimer);
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const delta = dragStartX - e.pageX;
+    if (Math.abs(delta) > 5) hasDragged = true;
+    wrapper.scrollLeft = scrollStart + delta;
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    wrapper.style.cursor = '';
+    wrapper.style.userSelect = '';
+    const cardWidth = cards[0].offsetWidth + 16;
+    currentSlide = Math.round(wrapper.scrollLeft / cardWidth);
+    goToSlide(currentSlide);
+    startAutoPlay();
+    if (hasDragged) e.stopPropagation();
+  });
+
+  wrapper.addEventListener('touchstart', () => clearInterval(autoPlayTimer), { passive: true });
+  wrapper.addEventListener('touchend',   startAutoPlay, { passive: true });
+
+  function startAutoPlay() {
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(() => goToSlide(currentSlide + 1), 3000);
+  }
+
+  function resetAutoPlay() { clearInterval(autoPlayTimer); startAutoPlay(); }
+
+  function toggleControls() {
+    document.querySelectorAll('.carousel-arrow, .carousel-dots').forEach(el => {
+      el.style.display = isMobile() ? '' : 'none';
+    });
+  }
+
+  toggleControls();
+  window.addEventListener('resize', toggleControls);
+  startAutoPlay();
+})();
+</script>
+<section class="review-section py-5 text-center">
+  <div class="container">
+    <h3 class="fw-bold mb-1 text-dark">Please leave a review for us on</h3>
+    <h2 class="display-6 fw-bold mb-5">
+      <span class="text-google">Google</span> | <span class="text-facebook">Facebook</span>
+    </h2>
+
+    <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+      <a href="https://search.google.com/local/writereview?q=TXO+Restoration" class="review-badge google-ring" target="_blank">
+        <div class="inner-content">
+          <p class="mb-1">Review us<br>on</p>
+          <img src="https://www.gesi.org/wp-content/uploads/2024/08/google-logo-png-open-2000.png" alt="Google" width="50">
+        </div>
+      </a>
+
+      <a href="#" class="review-badge facebook-ring" target="_blank">
+        <div class="inner-content">
+          <p class="mb-1">Review us<br>on</p>
+          <img src="https://images.icon-icons.com/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt="Facebook" width="55">
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3358.4526789045734!2d-97.354269!3d32.750926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e7e1b5f5b5c5d%3A0x1234567890abcdef!2s3224%20Collinsworth%20St%2C%20Fort%20Worth%2C%20TX%2076107!5e1!3m2!1sen!2sus!4v1" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<footer class="footer-main text-white pt-5">
+  <div class="container pb-4">
+    <div class="row gy-5">
+
+      <!-- Logo & Social -->
+      <div class="col-lg-3">
+        <div class="mb-4">
+  <a href="/roofer/TXO-roofing.html" aria-label="TXO Restoration Home">
+    <img src="/roofer/txo-assets/fav-icon/TXO-favicon.png" alt="TXO Restoration Logo" class="img-fluid" style="max-height: 80px;">
+  </a>
+</div>
+<p class="small lh-base opacity-75">
+  TXO Restoration is your trusted roofing contractor in Fort Worth, TX. Quality workmanship, exceptional service, and results you can count on.
+</p>
+        <div class="mt-4">
+          <h5 class="footer-heading">Follow Us</h5>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-facebook d-inline-flex align-items-center justify-content-center"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-5 px-lg-5">
+        <h5 class="footer-heading">Quick Links</h5>
+        <div class="row mt-4">
+          <div class="col-6">
+            <ul class="list-unstyled footer-list">
+              <li><a href="/roofer/residential-roofing/">Residential Roofing</a></li>
+              <li><a href="/roofer/roof-repair/">Roof Repair</a></li>
+              <li><a href="/roofer/commercial-roofing/">Commercial Roofing</a></li>
+              <li><a href="/roofer/about/">About Us</a></li>
+              <li><a href="/roofer/contact/">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul class="list-unstyled footer-list">
+              <li><a href="/roofer/residential-roofing/free-roof-inspection/">Free Roof Inspection</a></li>
+              <li><a href="/roofer/residential-roofing/free-roof-estimate/">Free Roof Estimate</a></li>
+              <li><a href="/roofer/roof-repair/storm-damage/">Storm Damage Repair</a></li>
+              <li><a href="/roofer/roof-repair/hail-damage/">Hail Damage Repair</a></li>
+              <li><a href="/roofer/residential-roofing/gallery/">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Phone CTA -- Bootstrap Icon -->
+        <a href="tel:8173327733" class="footer-phone-cta mt-4 d-inline-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill"></i>
+          (817) 332-7733
+        </a>
+      </div>
+
+      <!-- Company Info & Hours -->
+      <div class="col-lg-4">
+        <div class="mb-5">
+          <h5 class="footer-heading">Company Info</h5>
+          <p class="small mt-4 opacity-75">
+            3224 Collinsworth St<br>
+            Fort Worth, TX 76107
+          </p>
+          <p class="small opacity-75">
+            <a href="https://txoroof.com" target="_blank" style="color: var(--color-text-light);">txoroof.com</a>
+          </p>
+        </div>
+        <div>
+          <h5 class="footer-heading">Business Hours</h5>
+          <ul class="list-unstyled small mt-4 business-hours">
+            <li><span>Mon:</span> <span>9:00 AM – 5:00 PM</span></li>
+            <li><span>Tue:</span> <span>9:00 AM – 5:00 PM</span></li>
+            <li><span>Wed:</span> <span>9:00 AM – 5:00 PM</span></li>
+            <li><span>Thu:</span> <span>9:00 AM – 5:00 PM</span></li>
+            <li><span>Fri:</span> <span>9:00 AM – 5:00 PM</span></li>
+            <li><span>Sat:</span> <span>Closed</span></li>
+            <li><span>Sun:</span> <span>Closed</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="copyright-bar py-3 mt-4">
+    <div class="container">
+      <div class="row align-items-center text-center text-md-start">
+        <div class="col-md-8">
+          <p class="mb-0 small">Copyright &copy; 2026 TXO Restoration | Website developed & hosted by <b><a class="text-decoration-none text-warning" href="https://schrader.co/">Schrader Web Solutions</a></b></p>
+        </div>
+        <div class="col-md-4 text-md-end mt-2 mt-md-0">
+          <p class="mb-0 small"><a href="#" class="text-decoration-none text-white"> Privacy Policy</a>  | <a href="#" class="text-decoration-none text-white"> Terms & Conditions</a> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="/js/main.js"></script>
+  </body>
+</html>
