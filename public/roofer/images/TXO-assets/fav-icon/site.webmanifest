@@ -1,0 +1,19 @@
+{
+    "name": "TXO Restoration",
+    "short_name": "TXO",
+    "icons": [
+        {
+            "src": "/roofer/images/TXO-assets/fav-icon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/roofer/images/TXO-assets/fav-icon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#825fa4",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
