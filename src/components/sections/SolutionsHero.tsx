@@ -20,8 +20,8 @@ export function SolutionsHero() {
           </div>
 
           {/* Side Statement */}
-          <div className="lg:col-span-5 lg:pl-12 lg:border-l border-[#DAB49D] lg:mt-14">
-            <p className="font-serif text-[20px] lg:text-[22px] text-[#5E3023] leading-[1.45]">
+          <div className="lg:col-span-5 lg:pl-12 lg:border-l border-[#98C1D9] lg:mt-14">
+            <p className="font-serif text-[20px] lg:text-[22px] text-[#293241] leading-[1.45]">
               No fluff. No jargon.<br />
               Just what works.
             </p>

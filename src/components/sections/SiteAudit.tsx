@@ -229,7 +229,7 @@ export function SiteAudit() {
             Is your website losing clients before it even loads?
           </h2>
 
-          <p className="reveal reveal-delay-1 text-[19px] md:text-[21px] text-[#895737] leading-[1.6] max-w-[760px]">
+          <p className="reveal reveal-delay-1 text-[19px] md:text-[21px] text-[#3D5A80] leading-[1.6] max-w-[760px]">
             Put in your domain name. We'll run a real-time <strong>Lighthouse & Speed Audit</strong> to benchmark Core Web Vitals, check for missing Open Graph social cards, and pinpoint SEO bottlenecks.
           </p>
 
@@ -241,9 +241,9 @@ export function SiteAudit() {
             }}
             className="reveal reveal-delay-2 w-full mt-10 max-w-[700px]"
           >
-            <div className="flex flex-col sm:flex-row items-stretch gap-3 p-2 bg-[#FAF6F0] rounded-[var(--radius-md)] border border-[#DAB49D] focus-within:border-[#5E3023] transition-all">
+            <div className="flex flex-col sm:flex-row items-stretch gap-3 p-2 bg-white rounded-[var(--radius-md)] border border-[#98C1D9] focus-within:border-[#293241] transition-all">
               <div className="flex items-center flex-1 px-4 gap-3 min-w-0">
-                <Globe className="w-5 h-5 text-[#895737]/75 shrink-0" />
+                <Globe className="w-5 h-5 text-[#3D5A80]/75 shrink-0" />
                 <input
                   type="text"
                   value={inputUrl}
@@ -252,7 +252,7 @@ export function SiteAudit() {
                     if (error) setError(null);
                   }}
                   placeholder="Enter your website URL (e.g. yourbusiness.com)"
-                  className="w-full bg-transparent text-[16px] md:text-[17px] text-[#5E3023] placeholder:text-[#895737]/60 outline-none font-sans py-3"
+                  className="w-full bg-transparent text-[16px] md:text-[17px] text-[#293241] placeholder:text-[#3D5A80]/60 outline-none font-sans py-3"
                 />
               </div>
 
@@ -268,7 +268,7 @@ export function SiteAudit() {
                   </>
                 ) : (
                   <>
-                    <Sparkles className="w-4 h-4 text-[#C08552]" />
+                    <Sparkles className="w-4 h-4 text-[#F7931E]" />
                     <span>Run Audit</span>
                   </>
                 )}
@@ -276,8 +276,8 @@ export function SiteAudit() {
             </div>
 
             {/* Quick Sample Presets */}
-            <div className="flex items-center justify-center flex-wrap gap-2 mt-4 text-[14px] text-[#895737]">
-              <span className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#895737]/75">
+            <div className="flex items-center justify-center flex-wrap gap-2 mt-4 text-[14px] text-[#3D5A80]">
+              <span className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#3D5A80]/75">
                 Try an example:
               </span>
               {SAMPLE_SITES.map((sample) => (
@@ -289,7 +289,7 @@ export function SiteAudit() {
                     setInputUrl(sample.url);
                     handleRunAudit(sample.url);
                   }}
-                  className="px-3.5 py-1.5 rounded-[var(--radius-sm)] bg-[#FAF6F0] text-[#5E3023] hover:bg-[#5E3023] hover:text-[#FAF6F0] border border-[#DAB49D] transition-all text-[13px] font-medium cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed shadow-2xs"
+                  className="px-3.5 py-1.5 rounded-[var(--radius-sm)] bg-white text-[#293241] hover:bg-[#293241] hover:text-white border border-[#98C1D9] transition-all text-[13px] font-medium cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed shadow-2xs"
                 >
                   {sample.label}
                 </button>
@@ -297,8 +297,8 @@ export function SiteAudit() {
             </div>
 
             {error && (
-              <div className="mt-4 p-4 bg-[#DAB49D]/20 border border-[#DAB49D] text-[#5E3023] text-[15px] rounded-[var(--radius-md)] flex items-center gap-3 justify-center">
-                <AlertTriangle className="w-5 h-5 shrink-0 text-[#C08552]" />
+              <div className="mt-4 p-4 bg-[#98C1D9]/20 border border-[#98C1D9] text-[#293241] text-[15px] rounded-[var(--radius-md)] flex items-center gap-3 justify-center">
+                <AlertTriangle className="w-5 h-5 shrink-0 text-[#F7931E]" />
                 <span>{error}</span>
               </div>
             )}
@@ -307,38 +307,38 @@ export function SiteAudit() {
 
         {/* Loading Progress State */}
         {isLoading && (
-          <div className="max-w-[720px] mx-auto my-12 p-8 md:p-10 rounded-[var(--radius-md)] bg-[#FAF6F0] border border-[#DAB49D] shadow-sm text-left">
+          <div className="max-w-[720px] mx-auto my-12 p-8 md:p-10 rounded-[var(--radius-md)] bg-white border border-[#98C1D9] shadow-sm text-left">
             {/* Header with live status and elapsed timer */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-[#DAB49D]/50 mb-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-[#98C1D9]/50 mb-6">
               <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#F3E9DC] border border-[#DAB49D] text-[#5E3023] shrink-0">
-                  <Globe className="w-5 h-5 text-[#895737]" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#E0FBFC] border border-[#98C1D9] text-[#293241] shrink-0">
+                  <Globe className="w-5 h-5 text-[#3D5A80]" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[20px] md:text-[22px] font-bold text-[#5E3023]">
+                  <h3 className="font-serif text-[20px] md:text-[22px] font-bold text-[#293241]">
                     Auditing {inputUrl}
                   </h3>
-                  <p className="text-[13px] text-[#895737]">
+                  <p className="text-[13px] text-[#3D5A80]">
                     Running live Core Web Vitals & technical diagnostic suite
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F3E9DC] border border-[#DAB49D] text-[#5E3023] text-[13px] font-mono shrink-0 self-start sm:self-auto">
-                <Clock className="w-3.5 h-3.5 text-[#C08552]" />
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0FBFC] border border-[#98C1D9] text-[#293241] text-[13px] font-mono shrink-0 self-start sm:self-auto">
+                <Clock className="w-3.5 h-3.5 text-[#F7931E]" />
                 <span>{(elapsedMs / 1000).toFixed(1)}s elapsed</span>
               </div>
             </div>
 
             {/* Smooth Asymptotic Progress Bar */}
             <div className="mb-8">
-              <div className="flex items-center justify-between text-[13px] font-medium text-[#895737] mb-2">
+              <div className="flex items-center justify-between text-[13px] font-medium text-[#3D5A80] mb-2">
                 <span>Deep Analysis in Progress...</span>
-                <span className="font-mono font-bold text-[#5E3023]">{getProgress(elapsedMs)}%</span>
+                <span className="font-mono font-bold text-[#293241]">{getProgress(elapsedMs)}%</span>
               </div>
-              <div className="w-full h-2.5 bg-[#DAB49D]/30 rounded-full overflow-hidden p-0.5 border border-[#DAB49D]/40">
+              <div className="w-full h-2.5 bg-[#98C1D9]/30 rounded-full overflow-hidden p-0.5 border border-[#98C1D9]/40">
                 <div
-                  className="h-full bg-gradient-to-r from-[#C08552] to-[#895737] transition-[width] duration-700 ease-out rounded-full"
+                  className="h-full bg-gradient-to-r from-[#F7931E] to-[#3D5A80] transition-[width] duration-700 ease-out rounded-full"
                   style={{ width: `${getProgress(elapsedMs)}%` }}
                 />
               </div>
@@ -346,23 +346,23 @@ export function SiteAudit() {
 
             {/* Live Diagnostic Stream Feed */}
             <div className="space-y-3 mb-8">
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[#895737]/80 mb-1">
+              <div className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[#3D5A80]/80 mb-1">
                 Live Diagnostic Stream
               </div>
 
               {/* Currently running step */}
-              <div className="flex items-start gap-3.5 p-3.5 rounded-[var(--radius-sm)] bg-[#FFFDF9] border border-[#C08552]/40 shadow-2xs transition-all duration-300">
-                <Loader2 className="w-5 h-5 text-[#C08552] animate-spin shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3.5 p-3.5 rounded-[var(--radius-sm)] bg-[#FFF9F2] border border-[#F7931E]/40 shadow-2xs transition-all duration-300">
+                <Loader2 className="w-5 h-5 text-[#F7931E] animate-spin shrink-0 mt-0.5" />
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-[14px] text-[#5E3023]">
+                    <span className="font-semibold text-[14px] text-[#293241]">
                       {SCAN_MILESTONES[currentMilestoneIndex].title}
                     </span>
-                    <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-[#C08552]/15 text-[#5E3023]">
+                    <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-[#F7931E]/15 text-[#293241]">
                       Running
                     </span>
                   </div>
-                  <p className="text-[13px] text-[#895737] mt-0.5">
+                  <p className="text-[13px] text-[#3D5A80] mt-0.5">
                     {SCAN_MILESTONES[currentMilestoneIndex].subtitle}
                   </p>
                 </div>
@@ -376,10 +376,10 @@ export function SiteAudit() {
                     .map((idx) => (
                       <div
                         key={SCAN_MILESTONES[idx].id}
-                        className="flex items-center gap-3 px-3.5 py-2 rounded-[var(--radius-sm)] bg-[#FAF6F0] text-[13px] text-[#5E3023] transition-all duration-300"
+                        className="flex items-center gap-3 px-3.5 py-2 rounded-[var(--radius-sm)] bg-white text-[13px] text-[#293241] transition-all duration-300"
                       >
                         <CheckCircle2 className="w-4 h-4 text-[#2E7D32] shrink-0" />
-                        <span className="font-medium text-[#5E3023] line-clamp-1">
+                        <span className="font-medium text-[#293241] line-clamp-1">
                           {SCAN_MILESTONES[idx].title}
                         </span>
                         <span className="ml-auto text-[11px] text-[#226327] font-medium shrink-0">
@@ -392,21 +392,21 @@ export function SiteAudit() {
             </div>
 
             {/* While You Wait - Conversion Impact Ticker */}
-            <div className="p-4 md:p-5 rounded-[var(--radius-sm)] bg-[#F3E9DC]/60 border border-[#DAB49D] text-left transition-all duration-500 ease-out">
-              <div className="flex items-center gap-2 mb-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#895737]">
+            <div className="p-4 md:p-5 rounded-[var(--radius-sm)] bg-[#E0FBFC]/50 border border-[#98C1D9] text-left transition-all duration-500 ease-out">
+              <div className="flex items-center gap-2 mb-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#3D5A80]">
                 <span>Why Website Speed Matters</span>
               </div>
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-[var(--radius-sm)] bg-[#C08552]/15 flex items-center justify-center text-[#5E3023] shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-[var(--radius-sm)] bg-[#F7931E]/15 flex items-center justify-center text-[#293241] shrink-0 mt-0.5">
                   {React.createElement(CONVERSION_TIPS[currentTipIndex].icon, {
-                    className: "w-4 h-4 text-[#C08552]",
+                    className: "w-4 h-4 text-[#F7931E]",
                   })}
                 </div>
                 <div>
-                  <span className="inline-block font-bold text-[14px] md:text-[15px] text-[#5E3023] mb-0.5">
+                  <span className="inline-block font-bold text-[14px] md:text-[15px] text-[#293241] mb-0.5">
                     {CONVERSION_TIPS[currentTipIndex].stat}
                   </span>
-                  <p className="text-[13px] md:text-[14px] text-[#895737] leading-relaxed">
+                  <p className="text-[13px] md:text-[14px] text-[#3D5A80] leading-relaxed">
                     {CONVERSION_TIPS[currentTipIndex].fact}
                   </p>
                 </div>
@@ -420,13 +420,13 @@ export function SiteAudit() {
           <div className="space-y-14 mt-6">
             
             {/* Header info bar */}
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 bg-[#FAF6F0] rounded-[var(--radius-md)] border border-[#DAB49D] gap-4">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 bg-white rounded-[var(--radius-md)] border border-[#98C1D9] gap-4">
               <div className="flex items-center gap-4">
                 {auditData.seoMeta.favicon && (
                   <img
                     src={auditData.seoMeta.favicon}
                     alt="Favicon"
-                    className="w-10 h-10 rounded-[var(--radius-sm)] bg-[#F3E9DC] p-1.5 border border-[#DAB49D] object-contain"
+                    className="w-10 h-10 rounded-[var(--radius-sm)] bg-[#E0FBFC] p-1.5 border border-[#98C1D9] object-contain"
                     onError={(e) => {
                       (e.target as HTMLElement).style.display = "none";
                     }}
@@ -434,14 +434,14 @@ export function SiteAudit() {
                 )}
                 <div>
                   <div className="flex flex-wrap items-center gap-2.5">
-                    <h3 className="font-serif text-[22px] font-bold text-[#5E3023]">
+                    <h3 className="font-serif text-[22px] font-bold text-[#293241]">
                       {auditData.domain}
                     </h3>
                     <a
                       href={auditData.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#895737]/75 hover:text-[#5E3023]"
+                      className="text-[#3D5A80]/75 hover:text-[#293241]"
                     >
                       <ExternalLink className="w-4.5 h-4.5" />
                     </a>
@@ -454,14 +454,14 @@ export function SiteAudit() {
                     ) : (
                       <span
                         title="Live Google API timed out or rate-limited; estimated using live DOM structure & server response benchmarks"
-                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[12px] font-medium bg-[#F3E9DC] text-[#895737] border border-[#DAB49D]"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[12px] font-medium bg-[#E0FBFC] text-[#3D5A80] border border-[#98C1D9]"
                       >
-                        <Sparkles className="w-3 h-3 text-[#C08552]" />
+                        <Sparkles className="w-3 h-3 text-[#F7931E]" />
                         Estimated Benchmark
                       </span>
                     )}
                   </div>
-                  <p className="text-[14px] text-[#895737] mt-0.5">
+                  <p className="text-[14px] text-[#3D5A80] mt-0.5">
                     Audited {new Date(auditData.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} • {auditData.isLiveLighthouse ? "Powered by Live Google Lighthouse API" : "DOM Structure & Heuristic Speed Benchmark"}
                   </p>
                 </div>
@@ -481,14 +481,14 @@ export function SiteAudit() {
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
                 <div>
-                  <h3 className="font-serif text-[24px] text-[#5E3023]">
+                  <h3 className="font-serif text-[24px] text-[#293241]">
                     Overall Site Health: <span className="font-bold">{averageScore}/100</span>
                   </h3>
                 </div>
-                <div className="flex items-center gap-4 text-[13px] text-[#895737]">
+                <div className="flex items-center gap-4 text-[13px] text-[#3D5A80]">
                   <span className="px-2 py-0.5 rounded bg-[#EDF7EE] text-[#226327] font-medium border border-[#CBE5CF]">90-100</span>
-                  <span className="px-2 py-0.5 rounded bg-[#C08552]/15 text-[#5E3023] font-medium border border-[#C08552]/40">50-89</span>
-                  <span className="px-2 py-0.5 rounded bg-[#DAB49D]/25 text-[#5E3023] font-medium border border-[#DAB49D]">0-49</span>
+                  <span className="px-2 py-0.5 rounded bg-[#F7931E]/15 text-[#293241] font-medium border border-[#F7931E]/40">50-89</span>
+                  <span className="px-2 py-0.5 rounded bg-[#98C1D9]/25 text-[#293241] font-medium border border-[#98C1D9]">0-49</span>
                 </div>
               </div>
 
@@ -520,30 +520,30 @@ export function SiteAudit() {
 
 
             {/* 05. Conversion Call to Action Box */}
-            <div className="p-8 md:p-14 rounded-[var(--radius-md)] bg-[#5E3023] text-[#F3E9DC] relative overflow-hidden border border-[#482319]">
+            <div className="p-8 md:p-14 rounded-[var(--radius-md)] bg-[#293241] text-[#E0FBFC] relative overflow-hidden border border-[#1e2633]">
               <div className="relative z-10 max-w-3xl">
-                <div className="inline-flex items-center px-4 py-2 rounded-[var(--radius-sm)] bg-[#C08552]/20 border border-[#C08552]/40 text-[#DAB49D] text-[14px] md:text-[15px] font-semibold mb-5">
+                <div className="inline-flex items-center px-4 py-2 rounded-[var(--radius-sm)] bg-[#F7931E]/20 border border-[#F7931E]/40 text-[#98C1D9] text-[14px] md:text-[15px] font-semibold mb-5">
                   <span>Turn These Audits Into Growth</span>
                 </div>
 
-                <h3 className="font-serif text-[32px] md:text-[42px] leading-[1.18] text-[#F3E9DC] mb-5 font-medium">
+                <h3 className="font-serif text-[32px] md:text-[42px] leading-[1.18] text-[#E0FBFC] mb-5 font-medium">
                   Ready to turn {auditData.domain} into a 95+ score lead engine?
                 </h3>
 
-                <p className="text-[18px] md:text-[20px] text-[#DAB49D] leading-[1.6] mb-8 max-w-2xl">
+                <p className="text-[18px] md:text-[20px] text-[#98C1D9] leading-[1.6] mb-8 max-w-2xl">
                   I eliminate slow render-blocking assets, set up high-converting Open Graph share cards, and structure your site for maximum Google search visibility.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5">
                   <a
                     href="#contact"
-                    className="inline-flex items-center justify-center gap-2.5 bg-[#C08552] hover:bg-[#A96F3F] text-[#F3E9DC] font-semibold text-[16px] md:text-[17px] px-9 py-4.5 rounded-[var(--radius-md)] transition-all cursor-pointer shadow-sm hover:shadow-md"
+                    className="inline-flex items-center justify-center gap-2.5 bg-[#F7931E] hover:bg-[#E07E0B] text-white font-semibold text-[16px] md:text-[17px] px-9 py-4.5 rounded-[var(--radius-md)] transition-all cursor-pointer shadow-sm hover:shadow-md"
                   >
                     <span>Fix My Website Bottlenecks</span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
 
-                  <span className="text-[15px] md:text-[16px] text-[#DAB49D] sm:ml-2">
+                  <span className="text-[15px] md:text-[16px] text-[#98C1D9] sm:ml-2">
                     Direct review • Tailored strategy
                   </span>
                 </div>

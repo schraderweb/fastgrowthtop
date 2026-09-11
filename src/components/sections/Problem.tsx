@@ -56,24 +56,24 @@ export function Problem() {
         </div>
 
         {/* Problem Cards — 2×2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#DAB49D]/40 rounded-[var(--radius-lg)] overflow-hidden mb-12 stagger-children">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#98C1D9]/40 rounded-[var(--radius-lg)] overflow-hidden mb-12 stagger-children">
           {problems.map((problem) => (
             <div
               key={problem.number}
-              className="reveal bg-[#FAF6F0] p-8 lg:p-10 group"
+              className="reveal bg-white p-8 lg:p-10 group"
             >
               {/* Number */}
-              <span className="text-[12px] font-semibold text-[#895737]/75 tracking-[0.14em] uppercase block mb-6">
+              <span className="text-[12px] font-semibold text-[#3D5A80]/75 tracking-[0.14em] uppercase block mb-6">
                 {problem.number}
               </span>
 
               {/* Title — serif for emotion */}
-              <h3 className="font-serif text-[24px] lg:text-[28px] text-[#5E3023] leading-[1.15] mb-4">
+              <h3 className="font-serif text-[24px] lg:text-[28px] text-[#293241] leading-[1.15] mb-4">
                 {problem.title}
               </h3>
 
               {/* Description — sans for information */}
-              <p className="text-[15px] text-[#895737] leading-[1.6]">
+              <p className="text-[15px] text-[#3D5A80] leading-[1.6]">
                 {problem.description}
               </p>
             </div>
@@ -82,10 +82,10 @@ export function Problem() {
 
         {/* Transition */}
         <div className="reveal flex flex-col items-center text-center">
-          <p className="font-serif text-[22px] text-[#5E3023] mb-3">
+          <p className="font-serif text-[22px] text-[#293241] mb-3">
             That's where I come in.
           </p>
-          <ArrowDown className="w-4 h-4 text-[#C08552]" />
+          <ArrowDown className="w-4 h-4 text-[#F7931E]" />
         </div>
       </div>
     </section>

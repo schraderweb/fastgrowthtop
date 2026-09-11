@@ -93,24 +93,24 @@ export function Header() {
       <header
         className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
           scrolled
-            ? "bg-[#F3E9DC]/90 backdrop-blur-[16px] shadow-sm border-b border-[#DAB49D]/50"
-            : "bg-[#F3E9DC]"
+            ? "bg-[#E0FBFC]/90 backdrop-blur-[16px] shadow-sm border-b border-[#98C1D9]/50"
+            : "bg-[#E0FBFC]"
         }`}
       >
         <div className="max-w-[1360px] mx-auto px-6 md:px-10 lg:px-14">
           <div className="flex items-center justify-between h-[72px] lg:h-[80px]">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <span className="font-serif text-[22px] text-[#5E3023] tracking-tight transition-opacity group-hover:opacity-70">
+              <span className="font-serif text-[22px] text-[#293241] tracking-tight transition-opacity group-hover:opacity-70">
                 Schrader
               </span>
-              <span className="text-[12px] text-[#895737] font-medium tracking-[0.02em] hidden sm:block">
+              <span className="text-[12px] text-[#3D5A80] font-medium tracking-[0.02em] hidden sm:block">
                 Digital Marketing & Automation
               </span>
             </Link>
 
             {/* Desktop Nav with Glow Pill */}
-            <nav className="hidden lg:flex items-center gap-1.5 bg-[#DAB49D]/25 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#DAB49D]/70 shadow-[inset_0_1px_2px_rgba(94,48,35,0.03)]">
+            <nav className="hidden lg:flex items-center gap-1.5 bg-[#98C1D9]/25 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#98C1D9]/70 shadow-[inset_0_1px_2px_rgba(41,50,65,0.03)]">
               {navItems.map((item) => {
                 const isActive = activeSection === item.href.replace("#", "");
                 return (
@@ -119,8 +119,8 @@ export function Header() {
                     href={item.href}
                     className={`relative px-4 py-1.5 rounded-full text-[12px] uppercase tracking-[0.08em] font-medium transition-all duration-300 ${
                       isActive
-                        ? "text-[#5E3023] font-semibold bg-white/95 shadow-[0_0_16px_rgba(192,133,82,0.35),0_2px_8px_rgba(94,48,35,0.06)] border border-[#C08552]/60"
-                        : "text-[#895737] hover:text-[#5E3023] hover:bg-white/40 border border-transparent"
+                        ? "text-[#293241] font-semibold bg-white/95 shadow-[0_0_16px_rgba(247,147,30,0.35),0_2px_8px_rgba(41,50,65,0.06)] border border-[#F7931E]/60"
+                        : "text-[#3D5A80] hover:text-[#293241] hover:bg-white/50 border border-transparent"
                     }`}
                   >
                     {item.label}
@@ -134,7 +134,7 @@ export function Header() {
               href="#contact"
               className={`hidden lg:flex btn-primary text-[13px] py-3 px-6 transition-all duration-300 ${
                 activeSection === "contact"
-                  ? "shadow-[0_0_20px_rgba(192,133,82,0.4)] border-[#C08552]"
+                  ? "shadow-[0_0_20px_rgba(247,147,30,0.4)] border-[#F7931E]"
                   : ""
               }`}
             >
@@ -150,17 +150,17 @@ export function Header() {
             >
               <div className="flex flex-col gap-[6px]">
                 <span
-                  className={`block w-6 h-[1.5px] bg-[#5E3023] rounded-full transition-all duration-300 ${
+                  className={`block w-6 h-[1.5px] bg-[#293241] rounded-full transition-all duration-300 ${
                     mobileOpen ? "rotate-45 translate-y-[7.5px]" : ""
                   }`}
                 />
                 <span
-                  className={`block w-6 h-[1.5px] bg-[#5E3023] rounded-full transition-all duration-300 ${
+                  className={`block w-6 h-[1.5px] bg-[#293241] rounded-full transition-all duration-300 ${
                     mobileOpen ? "opacity-0" : ""
                   }`}
                 />
                 <span
-                  className={`block w-6 h-[1.5px] bg-[#5E3023] rounded-full transition-all duration-300 ${
+                  className={`block w-6 h-[1.5px] bg-[#293241] rounded-full transition-all duration-300 ${
                     mobileOpen ? "-rotate-45 -translate-y-[7.5px]" : ""
                   }`}
                 />
@@ -172,7 +172,7 @@ export function Header() {
 
       {/* Mobile Overlay */}
       <div
-        className={`fixed inset-0 z-[90] bg-[#F3E9DC] transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-[90] bg-[#E0FBFC] transition-all duration-500 lg:hidden ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -188,8 +188,8 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={`font-serif text-[38px] transition-all duration-300 py-1.5 ${
                   isActive
-                    ? "text-[#5E3023] font-medium translate-x-2"
-                    : "text-[#895737] hover:text-[#5E3023]"
+                    ? "text-[#293241] font-medium translate-x-2"
+                    : "text-[#3D5A80] hover:text-[#293241]"
                 }`}
                 style={{
                   transitionDelay: mobileOpen ? `${i * 60}ms` : "0ms",
@@ -199,7 +199,7 @@ export function Header() {
               </Link>
             );
           })}
-          <div className="mt-8 pt-8 border-t border-[#DAB49D] w-full">
+          <div className="mt-8 pt-8 border-t border-[#98C1D9] w-full">
             <Link
               href="#contact"
               onClick={() => setMobileOpen(false)}
