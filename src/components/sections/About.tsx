@@ -7,7 +7,7 @@ export function About() {
   const ref = useScrollReveal();
 
   return (
-    <section id="about" className="section-padding bg-[#DAB49D]/20" ref={ref}>
+    <section id="about" className="section-padding bg-[#98C1D9]/20" ref={ref}>
       <div className="max-w-[1360px] mx-auto px-6 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -26,8 +26,8 @@ export function About() {
               </p>
 
               <div className="pt-2">
-                <div className="pl-5 border-l-2 border-[#C08552] max-w-[520px]">
-                  <p className="text-[17px] lg:text-[18px] text-[#5E3023] font-medium leading-[1.55]">
+                <div className="pl-5 border-l-2 border-[#F7931E] max-w-[520px]">
+                  <p className="text-[17px] lg:text-[18px] text-[#293241] font-medium leading-[1.55]">
                     Direct collaboration, honest advice, and digital systems built to grow your business.
                   </p>
                 </div>

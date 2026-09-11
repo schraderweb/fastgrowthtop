@@ -1,44 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  --color-linen: #F3E9DC;
-  --color-golden-chestnut: #C08552;
-  --color-espresso: #5E3023;
-  --color-toffee-brown: #895737;
-  --color-desert-sand: #DAB49D;
+  --color-dusk-blue: #3D5A80;
+  --color-powder-blue: #98C1D9;
+  --color-light-cyan: #E0FBFC;
+  --color-orange: #F7931E;
+  --color-jet-black: #293241;
+
+  /* Backward-compatible legacy aliases */
+  --color-linen: #E0FBFC;
+  --color-golden-chestnut: #F7931E;
+  --color-espresso: #293241;
+  --color-toffee-brown: #3D5A80;
+  --color-desert-sand: #98C1D9;
 }
 
 /* ===================================================================
    SCHRADER.CO — DESIGN SYSTEM
-   Warm editorial palette · Serif/Sans typography · No blue
+   Modern Editorial Palette · Dusk Blue · Powder Blue · Light Cyan · Orange · Jet Black
    =================================================================== */
 
 @layer base {
   :root {
     /* — Official Brand Palette — */
-    --linen: #F3E9DC;
-    --golden-chestnut: #C08552;
-    --espresso: #5E3023;
-    --toffee-brown: #895737;
-    --desert-sand: #DAB49D;
+    --dusk-blue: #3D5A80;
+    --powder-blue: #98C1D9;
+    --light-cyan: #E0FBFC;
+    --orange: #F7931E;
+    --jet-black: #293241;
+
+    /* Legacy palette aliases */
+    --linen: #E0FBFC;
+    --golden-chestnut: #F7931E;
+    --espresso: #293241;
+    --toffee-brown: #3D5A80;
+    --desert-sand: #98C1D9;
 
     /* — Core Semantic System Mapped to Brand Palette — */
-    --ink: #5E3023;                     /* Espresso — for primary headings & contrast elements */
-    --ink-soft: #482319;                /* Darker espresso for hover states */
+    --ink: #293241;                     /* Jet Black — for primary headings & contrast elements */
+    --ink-soft: #1e2633;                /* Darker jet black for hover states */
     
-    --ivory: #F3E9DC;                   /* Linen — base background */
-    --warm-white: #FAF6F0;              /* Warm elevated surface / card fill */
-    --cream: #EFE4D6;                   /* Subtle desert sand/linen blend */
+    --ivory: #E0FBFC;                   /* Light Cyan — base background */
+    --warm-white: #FFFFFF;              /* Crisp elevated surface / card fill */
+    --cream: #F0FAFA;                   /* Subtle light cyan wash */
     
-    --stone: #895737;                   /* Toffee Brown — body & secondary text */
-    --stone-light: #A5785C;             /* Muted toffee for tertiary labels */
+    --stone: #3D5A80;                   /* Dusk Blue — body & secondary text */
+    --stone-light: #53789E;             /* Muted dusk blue for tertiary labels */
     
-    --border: #DAB49D;                  /* Desert Sand — primary border */
-    --border-light: rgba(218, 180, 157, 0.45); /* Soft desert sand for inner dividers */
+    --border: #98C1D9;                  /* Powder Blue — primary border */
+    --border-light: rgba(152, 193, 217, 0.45); /* Soft powder blue for inner dividers */
     
-    --ochre: #C08552;                   /* Golden Chestnut — accents & highlights */
-    --ochre-soft: rgba(192, 133, 82, 0.14);
-    --terracotta: #C08552;              /* Golden Chestnut */
+    --ochre: #F7931E;                   /* Orange — accents, highlights, underlines */
+    --ochre-soft: rgba(247, 147, 30, 0.16);
+    --terracotta: #F7931E;              /* Orange */
     
     /* — Typography — */
     --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -54,9 +68,9 @@
     --radius-lg: 10px;
     
     /* — Shadows — */
-    --shadow-sm: 0 2px 8px rgba(94, 48, 35, 0.04);
-    --shadow-md: 0 8px 24px rgba(94, 48, 35, 0.07);
-    --shadow-lg: 0 16px 48px rgba(94, 48, 35, 0.10);
+    --shadow-sm: 0 2px 8px rgba(41, 50, 65, 0.05);
+    --shadow-md: 0 8px 24px rgba(41, 50, 65, 0.08);
+    --shadow-lg: 0 16px 48px rgba(41, 50, 65, 0.12);
     
     /* — Transitions — */
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -421,24 +435,27 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--ink);
-  color: var(--ivory);
+  background-color: var(--orange);
+  color: #FFFFFF;
   font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
   padding: 14px 28px;
   border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
+  box-shadow: 0 3px 14px rgba(247, 147, 30, 0.35);
   transition: background-color var(--duration-fast) ease,
-              transform var(--duration-fast) var(--ease-out);
+              transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) ease;
   text-decoration: none;
 }
 
 .btn-primary:hover {
-  background-color: var(--ink-soft);
-  transform: translateY(-1px);
+  background-color: #E07E0B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(247, 147, 30, 0.45);
 }
 
 .btn-primary:active {
@@ -449,25 +466,31 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
   padding: 14px 28px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   cursor: pointer;
+  box-shadow: 0 1px 3px rgba(41, 50, 65, 0.04);
   transition: border-color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease,
               color var(--duration-fast) ease,
-              transform var(--duration-fast) var(--ease-out);
+              transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) ease;
   text-decoration: none;
 }
 
 .btn-secondary:hover {
   border-color: var(--ink);
-  transform: translateY(-1px);
+  background-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(41, 50, 65, 0.08);
 }
 
 /* Text link with arrow */
@@ -532,7 +555,7 @@
 
 .carousel-dot.active {
   width: 20px;
-  background-color: var(--ink);
+  background-color: var(--orange);
 }
 
 .carousel-arrow {
@@ -576,7 +599,7 @@ input, textarea {
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--ink) !important;
-  box-shadow: 0 0 0 2px rgba(94, 48, 35, 0.12);
+  box-shadow: 0 0 0 2px rgba(41, 50, 65, 0.15);
 }
 
 /* ===================================================================

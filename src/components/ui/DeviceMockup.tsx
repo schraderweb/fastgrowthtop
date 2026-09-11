@@ -161,7 +161,7 @@ export function DeviceMockup({ project }: DeviceMockupProps) {
             {/* Idle Floating Animation */}
             <div className="w-full animate-laptop-float">
               {/* Laptop Lid Screen Frame */}
-              <div className="relative bg-[#1a1715] rounded-t-[18px] sm:rounded-t-[24px] p-[7px] sm:p-[12px] pb-0 border border-[#3e3833] shadow-[0_28px_60px_rgba(94,48,35,0.25)]">
+              <div className="relative bg-[#1a1715] rounded-t-[18px] sm:rounded-t-[24px] p-[7px] sm:p-[12px] pb-0 border border-[#3e3833] shadow-[0_28px_60px_rgba(41,50,65,0.25)]">
                 {/* Screen Top Camera Notch */}
                 <div className="absolute top-[2px] sm:top-[4px] left-1/2 -translate-x-1/2 z-30 flex items-center justify-center w-24 sm:w-36 h-2.5 sm:h-4 bg-[#1a1715] rounded-b-md">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#0d0c0b] border border-[#2e2a27] flex items-center justify-center">
@@ -202,7 +202,7 @@ export function DeviceMockup({ project }: DeviceMockupProps) {
                     <div className="absolute top-0 inset-x-0 bg-gradient-to-b from-black/85 via-black/50 to-transparent p-3 sm:p-4 text-white z-20 flex items-center justify-between pointer-events-none">
                       <div className="flex items-center gap-1.5 sm:gap-2">
                         <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-white/80 flex items-center justify-center">
-                          <div className="w-1 h-1 bg-[#FAF6F0] rounded-full" />
+                          <div className="w-1 h-1 bg-white rounded-full" />
                         </div>
                         <span className="text-[10px] sm:text-xs font-serif tracking-wider uppercase font-semibold text-white/95">
                           {currentProject.name}
@@ -256,7 +256,7 @@ export function DeviceMockup({ project }: DeviceMockupProps) {
             {/* Idle Floating Animation (offset timing) */}
             <div className="w-full animate-phone-float">
               {/* iPhone Chassis */}
-              <div className="relative bg-[#191716] p-[5px] sm:p-[7px] pb-[6px] rounded-[26px] sm:rounded-[40px] border-[2.5px] sm:border-[4.5px] border-[#38332f] shadow-[0_28px_50px_rgba(94,48,35,0.38),0_10px_20px_rgba(0,0,0,0.3)]">
+              <div className="relative bg-[#191716] p-[5px] sm:p-[7px] pb-[6px] rounded-[26px] sm:rounded-[40px] border-[2.5px] sm:border-[4.5px] border-[#38332f] shadow-[0_28px_50px_rgba(41,50,65,0.38),0_10px_20px_rgba(0,0,0,0.3)]">
                 {/* Dynamic Island */}
                 <div className="absolute top-[7px] sm:top-[11px] left-1/2 -translate-x-1/2 z-30 w-11 sm:w-16 h-2.5 sm:h-3.5 bg-black rounded-full flex items-center justify-end pr-1 sm:pr-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#1b3a4b]/80" />
@@ -323,7 +323,8 @@ export function DeviceMockup({ project }: DeviceMockupProps) {
 
       {/* Ambient grounding shadow below devices */}
       <div className="relative -mt-1 sm:-mt-2 w-[90%] mx-auto pointer-events-none">
-        <div className="h-4 sm:h-6 bg-[#5E3023]/15 blur-xl rounded-full" />
+        <div className="h-5 sm:h-7 bg-black/60 blur-2xl rounded-full" />
+        <div className="h-3 sm:h-4 -mt-2 bg-[#3D5A80]/30 blur-xl rounded-full" />
       </div>
     </div>
   );

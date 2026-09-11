@@ -11,10 +11,10 @@ export function GoalBanner() {
         <div className="reveal flex items-center justify-center">
           {/* Content */}
           <div className="flex flex-col items-center text-center max-w-[620px] px-6">
-            <h2 className="font-serif text-[22px] lg:text-[26px] text-[#5E3023] leading-[1.25] mb-3">
+            <h2 className="font-serif text-[22px] lg:text-[26px] text-[#293241] leading-[1.25] mb-3">
               The goal is simple: more customers and less stress.
             </h2>
-            <p className="text-[16px] text-[#895737] leading-[1.6]">
+            <p className="text-[16px] text-[#3D5A80] leading-[1.6]">
               I handle the digital. You focus on your business.
             </p>
           </div>

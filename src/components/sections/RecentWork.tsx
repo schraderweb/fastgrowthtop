@@ -288,15 +288,19 @@ export function RecentWork() {
       ref={sectionRef}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="relative flex flex-col justify-between py-8 sm:py-12 lg:py-16 bg-[#F3E9DC] overflow-hidden"
+      className="relative flex flex-col justify-between py-12 sm:py-16 lg:py-24 bg-[#293241] text-[#E0FBFC] overflow-hidden"
     >
-      <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-14 flex flex-col flex-grow justify-between">
+      {/* Atmospheric depth glows */}
+      <div className="absolute top-[-10%] left-1/4 w-[600px] h-[600px] bg-[#3D5A80]/25 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-1/4 w-[500px] h-[500px] bg-[#F7931E]/10 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-14 flex flex-col flex-grow justify-between">
         {/* ========================================================
             HEADER ROW: Section Title + Intro
            ======================================================== */}
-        <div className="relative mb-6 sm:mb-8 lg:mb-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+        <div className="relative mb-8 sm:mb-10 lg:mb-12 max-w-2xl mx-auto text-center flex flex-col items-center">
           {/* Masked Line-by-Line Headline Reveal (Section 5) */}
-          <h2 className="font-serif text-[34px] sm:text-[46px] lg:text-[54px] xl:text-[60px] leading-[1.04] text-[#5E3023] mb-3 tracking-tight text-center">
+          <h2 className="font-serif text-[34px] sm:text-[46px] lg:text-[54px] xl:text-[60px] leading-[1.04] text-white mb-4 tracking-tight text-center">
             <span className="block overflow-hidden pb-1">
               <span ref={headingLine1Ref} className="inline-block will-change-transform">
                 Websites
@@ -307,7 +311,7 @@ export function RecentWork() {
                 Built for{" "}
                 <span
                   ref={headingItalicRef}
-                  className="italic inline-block will-change-transform"
+                  className="italic text-[#98C1D9] inline-block will-change-transform"
                 >
                   What's Next.
                 </span>
@@ -317,7 +321,7 @@ export function RecentWork() {
 
           <p
             ref={introParagraphRef}
-            className="text-sm sm:text-base text-[#895737] leading-[1.6] max-w-xl mx-auto text-center"
+            className="text-sm sm:text-base text-[#98C1D9]/90 leading-[1.65] max-w-xl mx-auto text-center"
           >
             Every business has a different story. We design, develop, and host
             websites that bring those stories to life — and turn visitors into
@@ -334,31 +338,31 @@ export function RecentWork() {
           {/* LEFT COLUMN: Project Details & Navigation */}
           <div className="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
             {/* Sliding Project Counter & Circular Arrow Controls (Section 13 & 21) */}
-            <div className="flex items-center gap-4 mb-4">
-              <div className="flex items-center gap-1 font-mono text-xs sm:text-sm font-semibold tracking-widest text-[#895737]">
+            <div className="flex items-center gap-4 mb-5">
+              <div className="flex items-center gap-1 font-mono text-xs sm:text-sm font-semibold tracking-widest text-[#98C1D9]">
                 <div className="relative h-5 w-6 overflow-hidden flex items-center justify-center">
                   <div
                     ref={counterNumberRef}
-                    className="absolute inset-0 flex items-center justify-center will-change-transform"
+                    className="absolute inset-0 flex items-center justify-center text-[#F7931E] font-bold will-change-transform"
                   >
                     {activeProject.number}
                   </div>
                 </div>
-                <span>/ 0{totalProjects}</span>
+                <span className="text-white/40">/ 0{totalProjects}</span>
               </div>
 
               {/* Prev / Next Circular Buttons */}
               <div className="flex items-center gap-2">
                 <button
                   onClick={handlePrev}
-                  className="group w-9 h-9 rounded-full border border-[#DAB49D] flex items-center justify-center text-[#5E3023] hover:bg-[#DAB49D]/40 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer shadow-sm"
+                  className="group w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
                   aria-label="Previous project"
                 >
                   <ChevronLeft className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="group w-9 h-9 rounded-full bg-[#5E3023] text-[#F3E9DC] flex items-center justify-center hover:bg-[#482319] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer shadow-sm"
+                  className="group w-9 h-9 rounded-full bg-[#F7931E] text-white flex items-center justify-center hover:bg-[#E07E0B] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer shadow-[0_2px_10px_rgba(247,147,30,0.35)]"
                   aria-label="Next project"
                 >
                   <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -371,7 +375,7 @@ export function RecentWork() {
               {/* Category & Location Tag */}
               <div
                 ref={projectCategoryRef}
-                className="text-[11px] sm:text-xs font-semibold tracking-[0.14em] text-[#895737]/85 uppercase mb-1.5 will-change-transform"
+                className="text-[11px] sm:text-xs font-semibold tracking-[0.14em] text-[#98C1D9] uppercase mb-2 will-change-transform font-mono"
               >
                 {activeProject.categoryTag}
               </div>
@@ -380,7 +384,7 @@ export function RecentWork() {
               <div className="min-h-[38px] sm:min-h-[48px] xl:min-h-[52px] flex items-center mb-3">
                 <h3
                   ref={projectTitleRef}
-                  className="font-serif text-[30px] sm:text-[38px] xl:text-[44px] text-[#5E3023] font-normal leading-[1.08] tracking-tight will-change-transform"
+                  className="font-serif text-[30px] sm:text-[38px] xl:text-[44px] text-white font-normal leading-[1.08] tracking-tight will-change-transform"
                 >
                   {activeProject.name}
                 </h3>
@@ -390,7 +394,7 @@ export function RecentWork() {
               <div className="min-h-[70px] sm:min-h-[76px] mb-5 max-w-md">
                 <p
                   ref={projectDescRef}
-                  className="text-[14px] sm:text-[15px] text-[#895737] leading-[1.65] will-change-transform"
+                  className="text-[14px] sm:text-[15px] text-[#E0FBFC]/80 leading-[1.65] will-change-transform"
                 >
                   {activeProject.description}
                 </p>
@@ -403,9 +407,9 @@ export function RecentWork() {
                   return (
                     <div
                       key={service}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#DAB49D] bg-[#FAF6F0]/80 text-[#895737] text-[11px] sm:text-[12px] font-medium shadow-[0_1px_2px_rgba(94,48,35,0.04)] hover:border-[#C08552] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#98C1D9]/25 bg-[#3D5A80]/40 text-[#E0FBFC] text-[11px] sm:text-[12px] font-medium backdrop-blur-xs hover:border-[#F7931E] transition-colors"
                     >
-                      <IconComponent className="w-3.5 h-3.5 text-[#C08552]" />
+                      <IconComponent className="w-3.5 h-3.5 text-[#F7931E]" />
                       <span>{service}</span>
                     </div>
                   );
@@ -419,7 +423,7 @@ export function RecentWork() {
                     href={activeProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#5E3023] text-[#F3E9DC] text-xs sm:text-sm font-medium shadow-md hover:bg-[#482319] hover:shadow-lg hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
+                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F7931E] hover:bg-[#E07E0B] text-white text-xs sm:text-sm font-semibold shadow-[0_4px_16px_rgba(247,147,30,0.35)] hover:shadow-[0_6px_20px_rgba(247,147,30,0.5)] hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
                   >
                     <span>View Live Site</span>
                     <ExternalLink className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -427,7 +431,7 @@ export function RecentWork() {
                 ) : (
                   <a
                     href="#contact"
-                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#5E3023] text-[#F3E9DC] text-xs sm:text-sm font-medium shadow-md hover:bg-[#482319] hover:shadow-lg hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
+                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F7931E] hover:bg-[#E07E0B] text-white text-xs sm:text-sm font-semibold shadow-[0_4px_16px_rgba(247,147,30,0.35)] hover:shadow-[0_6px_20px_rgba(247,147,30,0.5)] hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
                   >
                     <span>View Project</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -436,7 +440,7 @@ export function RecentWork() {
 
                 <button
                   onClick={handleNext}
-                  className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#5E3023] hover:text-[#C08552] transition-colors cursor-pointer py-2"
+                  className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#98C1D9] hover:text-[#F7931E] transition-colors cursor-pointer py-2"
                 >
                   <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                     Next Project
@@ -461,7 +465,7 @@ export function RecentWork() {
            ======================================================== */}
         <div
           ref={thumbnailRailRef}
-          className="pt-4 pb-2 border-t border-[#DAB49D]/50"
+          className="pt-6 pb-2 border-t border-white/10"
         >
           <div
             ref={thumbnailsContainerRef}
@@ -476,8 +480,8 @@ export function RecentWork() {
                   onClick={() => changeProject(idx, idx > activeIndex ? "next" : "prev")}
                   className={`group relative flex-shrink-0 w-[110px] sm:w-[135px] md:w-[150px] aspect-[16/10] rounded-lg overflow-hidden cursor-pointer transition-all duration-300 text-left ${
                     isActive
-                      ? "ring-2 ring-[#5E3023] ring-offset-2 ring-offset-[#F3E9DC] shadow-md scale-105 opacity-100 z-10"
-                      : "opacity-65 hover:opacity-100 hover:scale-103 border border-[#DAB49D]/80"
+                      ? "ring-2 ring-[#F7931E] ring-offset-2 ring-offset-[#293241] shadow-[0_4px_16px_rgba(247,147,30,0.3)] scale-105 opacity-100 z-10"
+                      : "opacity-50 hover:opacity-90 hover:scale-103 border border-white/15"
                   }`}
                   aria-label={`Select ${project.name}`}
                   aria-current={isActive ? "true" : undefined}
@@ -492,8 +496,8 @@ export function RecentWork() {
                     />
                   </div>
                   {/* Subtle Dark Vignette with Project Name */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-2 flex items-end">
-                    <span className="text-[10px] sm:text-[11px] font-medium text-white line-clamp-1 group-hover:text-[#F3E9DC]">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-2 flex items-end">
+                    <span className="text-[10px] sm:text-[11px] font-medium text-white line-clamp-1 group-hover:text-[#F7931E] transition-colors">
                       {project.name}
                     </span>
                   </div>
@@ -504,12 +508,12 @@ export function RecentWork() {
             {/* Special Final CTA Card: "Your Business Could Be Next" (Section 36) */}
             <a
               href="#contact"
-              className="group flex-shrink-0 w-[110px] sm:w-[135px] md:w-[150px] aspect-[16/10] rounded-lg border-2 border-dashed border-[#C08552]/80 hover:border-[#5E3023] bg-[#FAF6F0]/65 hover:bg-[#FAF6F0] p-2 flex flex-col items-center justify-center text-center transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-1 hover:scale-103"
+              className="group flex-shrink-0 w-[110px] sm:w-[135px] md:w-[150px] aspect-[16/10] rounded-lg border-2 border-dashed border-[#F7931E]/60 hover:border-[#F7931E] bg-[#3D5A80]/25 hover:bg-[#3D5A80]/45 p-2 flex flex-col items-center justify-center text-center transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:scale-103"
             >
-              <div className="w-6 h-6 rounded-full bg-[#C08552]/15 group-hover:bg-[#5E3023]/15 flex items-center justify-center text-[#C08552] group-hover:text-[#5E3023] mb-1 transition-all duration-300">
+              <div className="w-6 h-6 rounded-full bg-[#F7931E]/20 group-hover:bg-[#F7931E]/30 flex items-center justify-center text-[#F7931E] mb-1 transition-all duration-300">
                 <Plus className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-90" />
               </div>
-              <span className="text-[10px] sm:text-[11px] font-serif text-[#5E3023] font-medium leading-tight transition-colors">
+              <span className="text-[10px] sm:text-[11px] font-serif text-white font-medium leading-tight transition-colors">
                 Your Business
                 <br />
                 Could Be Next
