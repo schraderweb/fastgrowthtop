@@ -323,7 +323,8 @@ export function DeviceMockup({ project }: DeviceMockupProps) {
 
       {/* Ambient grounding shadow below devices */}
       <div className="relative -mt-1 sm:-mt-2 w-[90%] mx-auto pointer-events-none">
-        <div className="h-4 sm:h-6 bg-[#293241]/15 blur-xl rounded-full" />
+        <div className="h-5 sm:h-7 bg-black/60 blur-2xl rounded-full" />
+        <div className="h-3 sm:h-4 -mt-2 bg-[#3D5A80]/30 blur-xl rounded-full" />
       </div>
     </div>
   );

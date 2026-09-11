@@ -435,24 +435,27 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--ink);
+  background-color: var(--orange);
   color: #FFFFFF;
   font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
   padding: 14px 28px;
   border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
+  box-shadow: 0 3px 14px rgba(247, 147, 30, 0.35);
   transition: background-color var(--duration-fast) ease,
-              transform var(--duration-fast) var(--ease-out);
+              transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) ease;
   text-decoration: none;
 }
 
 .btn-primary:hover {
-  background-color: var(--ink-soft);
-  transform: translateY(-1px);
+  background-color: #E07E0B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(247, 147, 30, 0.45);
 }
 
 .btn-primary:active {
@@ -463,25 +466,31 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
   padding: 14px 28px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   cursor: pointer;
+  box-shadow: 0 1px 3px rgba(41, 50, 65, 0.04);
   transition: border-color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease,
               color var(--duration-fast) ease,
-              transform var(--duration-fast) var(--ease-out);
+              transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) ease;
   text-decoration: none;
 }
 
 .btn-secondary:hover {
   border-color: var(--ink);
-  transform: translateY(-1px);
+  background-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(41, 50, 65, 0.08);
 }
 
 /* Text link with arrow */
@@ -546,7 +555,7 @@
 
 .carousel-dot.active {
   width: 20px;
-  background-color: var(--ink);
+  background-color: var(--orange);
 }
 
 .carousel-arrow {

@@ -105,6 +105,9 @@ export function Reviews() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 lg:mb-16">
           <div>
 
+            <div className="reveal mb-3">
+              <span className="label-eyebrow text-[#3D5A80]">Client Reviews</span>
+            </div>
             <h2 className="reveal reveal-delay-1 text-section-heading mb-4">
               What my clients say.
             </h2>

@@ -56,19 +56,22 @@ export function Problem() {
         </div>
 
         {/* Problem Cards — 2×2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#98C1D9]/40 rounded-[var(--radius-lg)] overflow-hidden mb-12 stagger-children">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#98C1D9]/50 rounded-[var(--radius-lg)] overflow-hidden mb-12 stagger-children shadow-[0_4px_24px_rgba(41,50,65,0.04)]">
           {problems.map((problem) => (
             <div
               key={problem.number}
-              className="reveal bg-white p-8 lg:p-10 group"
+              className="reveal bg-white p-8 lg:p-10 group hover:bg-[#FAFDFC] transition-all relative"
             >
+              {/* Top hover indicator line */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#F7931E] opacity-0 group-hover:opacity-100 transition-opacity" />
+
               {/* Number */}
-              <span className="text-[12px] font-semibold text-[#3D5A80]/75 tracking-[0.14em] uppercase block mb-6">
+              <span className="text-[13px] font-mono font-bold text-[#F7931E] tracking-[0.14em] uppercase block mb-5">
                 {problem.number}
               </span>
 
               {/* Title — serif for emotion */}
-              <h3 className="font-serif text-[24px] lg:text-[28px] text-[#293241] leading-[1.15] mb-4">
+              <h3 className="font-serif text-[24px] lg:text-[28px] text-[#293241] leading-[1.18] mb-4">
                 {problem.title}
               </h3>
 

@@ -66,18 +66,18 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-[#E0FBFC]/15">
+      {/* Bottom Bar — Copyright in Solid Black */}
+      <div className="bg-black border-t border-neutral-800">
         <div className="max-w-[1360px] mx-auto px-6 md:px-10 lg:px-14 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span className="text-[12px] text-[#E0FBFC]/50">
+          <span className="text-[12px] text-neutral-400">
             © 2026 Schrader.co. All rights reserved.
           </span>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-[12px] text-[#E0FBFC]/50 hover:text-[#E0FBFC] transition-colors">
+            <Link href="#" className="text-[12px] text-neutral-400 hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <span className="text-[#E0FBFC]/30">·</span>
-            <Link href="#" className="text-[12px] text-[#E0FBFC]/50 hover:text-[#E0FBFC] transition-colors">
+            <span className="text-neutral-600">·</span>
+            <Link href="#" className="text-[12px] text-neutral-400 hover:text-white transition-colors">
               Terms of Service
             </Link>
           </div>

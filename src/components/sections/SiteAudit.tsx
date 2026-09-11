@@ -268,7 +268,7 @@ export function SiteAudit() {
                   </>
                 ) : (
                   <>
-                    <Sparkles className="w-4 h-4 text-[#F7931E]" />
+                    <Sparkles className="w-4 h-4 text-white" />
                     <span>Run Audit</span>
                   </>
                 )}
