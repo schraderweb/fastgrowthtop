@@ -40,11 +40,11 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3.5 group">
             <Image
-              src="/logo.png"
+              src="/logo-dark.png"
               alt="Schrader"
               width={140}
               height={31}
-              className="h-7 w-auto object-contain brightness-0 opacity-90 transition-opacity group-hover:opacity-75"
+              className="h-8 w-auto object-contain transition-opacity group-hover:opacity-80"
               priority
             />
             <span className="text-[12px] text-[#3D5A80] font-medium tracking-[0.02em] hidden sm:block border-l border-[#98C1D9]/70 pl-3">
