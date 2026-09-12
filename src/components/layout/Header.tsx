@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export function Header() {
@@ -29,20 +30,24 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 w-full z-[100] transition-all duration-500 ${scrolled
           ? "bg-[#E0FBFC]/90 backdrop-blur-[16px] shadow-sm border-b border-[#98C1D9]/60"
           : "bg-[#E0FBFC]"
-      }`}
+        }`}
     >
       <div className="max-w-[1360px] mx-auto px-6 md:px-10 lg:px-14">
         <div className="flex items-center justify-between h-[72px] lg:h-[80px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <span className="font-serif text-[24px] text-[#293241] tracking-tight transition-opacity group-hover:opacity-75">
-              Schrader
-            </span>
-            <span className="text-[12px] text-[#3D5A80] font-medium tracking-[0.02em] hidden sm:block">
+          <Link href="/" className="flex items-center gap-3.5 group">
+            <Image
+              src="/logo.png"
+              alt="Schrader"
+              width={140}
+              height={31}
+              className="h-7 w-auto object-contain brightness-0 opacity-90 transition-opacity group-hover:opacity-75"
+              priority
+            />
+            <span className="text-[12px] text-[#3D5A80] font-medium tracking-[0.02em] hidden sm:block border-l border-[#98C1D9]/70 pl-3">
               Digital Marketing & Automation
             </span>
           </Link>

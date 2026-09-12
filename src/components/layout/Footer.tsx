@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const navLinks = [
@@ -17,9 +18,15 @@ export function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-5">
-            <span className="font-serif text-[22px] text-[#E0FBFC] block mb-3 tracking-tight">
-              Schrader
-            </span>
+            <Link href="/" className="inline-block mb-3.5 group">
+              <Image
+                src="/logo.png"
+                alt="Schrader"
+                width={140}
+                height={31}
+                className="h-7 w-auto object-contain transition-opacity group-hover:opacity-80"
+              />
+            </Link>
             <span className="text-[12px] text-[#98C1D9]/80 uppercase tracking-[0.1em] block mb-5">
               Digital Marketing & Automation
             </span>
